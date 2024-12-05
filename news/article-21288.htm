@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-21288.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>编译python(cpython)的源码及其用途</title>
+        <meta name="description" content="获取python的源码 3.x及最新版本的源码：https://github.com/python/cpython python2.7分支的源码：https://github.com/python/c" />
+        <link rel="icon" href="__ADDON__/img/loonnode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                                        <a href="/">Loon Node</a>
+                                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">编译python(cpython)的源码及其用途</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<h2 id="获取python的源码">获取python的源码</h2> <p>3.x及最新版本的源码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/python/cpython"  target="_blank" rel="nofollow">https://github.com/python/cpython</a></p> <p>python2.7分支的源码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/python/cpython/tree/v2.7.18"  target="_blank" rel="nofollow">https://github.com/python/cpython/tree/v2.7.18</a></p> <p>python官网也提供源码下载：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.python.org/downloads/source"  target="_blank" rel="nofollow">https://www.python.org/downloads/source</a></p> <blockquote> <p>ps. 对比过从官网下载的源码和github内容是一样的</p> </blockquote> <p>python的源码是由C语言编写的，所以叫cpython</p> <p></p> <h2 id="编译python源码">编译python源码</h2> <blockquote> <p>我是在windows上编译python2.7的源码，可能还需要安装windows sdk，我的系统上已安装。</p> </blockquote> <p>使用vs2012及以上版本打开PCbuild目录下的pcbuild.sln，如果提示升级解决方案，请不要升级</p> <p>选中python这个project，设置python为启动项目</p> <p>选中解决方案(pcbuild) - 右键 - 配置管理器，在生成这列只勾选python和pythoncore</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/654621f43e3847c0003225395fe9752b.jpg" alt="编译python(cpython)的源码及其用途"></p> <p>选中python 和pythoncore - 右键 - 平台工具集(platform toolset)设置为2012，因为我们没有安装它默认的2008，否则会生成失败报未安装vs2008的工具集</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7bb3ff3c7152cd1b6cef9ca9cdbc5857.jpg" alt="编译python(cpython)的源码及其用途"></p> <p>点击生成，在PCbuild目录下会生成python.exe，如果是debug则会生成python_d.exe</p> <p></p> <h2 id="使用编译出来的python">使用编译出来的python</h2> <p>当把python作为游戏的脚本语言，为保护游戏不被反编译我们需要对python脚本进行加密，及需要对cpython源码做少量的修改让它更适合游戏领域。</p> <p>我们把编译出来的python.exe单独拷贝出来，就可以用它来执行python脚本了，如下所示</p> <pre><code class="language-python">PS E:\mypython&gt; .\python.exe hello.py hello PS E:\mypython&gt; .\python.exe Python 2.7.18 (tags/2.7-dirty:8d21aa21f2, Apr  5 2022, 14:59:21) [MSC v.1700 32 bit (Intel)] on win32 Type "help", "copyright", "credits" or "license" for more information.</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e9c58c46f94eeab839c524a5c56a1350.jpg" alt="编译python(cpython)的源码及其用途"></p> <p></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-20832.htm">狗狗领养协议模板下载安装（领养狗狗签协议）</a></p>
+                                        <p>下一个：<a href="/news/article-21290.htm">广州宠物领养平台官网地址查询（广州宠物领养平台官网地址查询下载）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-19457.htm" title="我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）">我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-12-loon-github.htm" title="「8月12日」最高速度21.9M/S，2024年Loon每天更新免费节点订阅链接">「8月12日」最高速度21.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-29-linux-loon-github.htm" title="「9月29日」最高速度22.2M/S，2024年Loon每天更新免费节点订阅链接">「9月29日」最高速度22.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-6-free-node-subscribe-links.htm" title="「10月6日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接">「10月6日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20832.htm" title="狗狗领养协议模板下载安装（领养狗狗签协议）">狗狗领养协议模板下载安装（领养狗狗签协议）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-15-node-share.htm" title="「9月15日」最高速度22M/S，2024年Loon每天更新免费节点订阅链接">「9月15日」最高速度22M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-loon-node.htm" title="「11月21日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接">「11月21日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-loon-node.htm" title="「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接">「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-31-today-loon-node.htm" title="「7月31日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接">「7月31日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-loon-windows.htm" title="「11月17日」最高速度22.3M/S，2024年Loon每天更新免费节点订阅链接">「11月17日」最高速度22.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                        <p>
+                            <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

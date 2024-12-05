@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-21703.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JAVA容器详解</title>
+        <meta name="description" content="文章目录  系列文章目录 前言 一、为什么引入Java容器？ 二、Java容器分类   1.Collection   (1).List (2).Set (3).Queue   2.Map   补漏查缺" />
+        <link rel="icon" href="__ADDON__/img/loonnode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                                        <a href="/">Loon Node</a>
+                                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">JAVA容器详解</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <hr/> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#_0" rel="nofollow">系列文章目录</a></li> <li><a href="#_7" rel="nofollow">前言</a></li> <li><a href="#Java_15" rel="nofollow">一、为什么引入Java容器？</a></li> <li><a href="#Java_22" rel="nofollow">二、Java容器分类</a></li> <li> <ul> <li><a href="#1Collection_34" rel="nofollow">1.Collection</a></li> <li> <ul> <li><a href="#1List_36" rel="nofollow">(1).List</a></li> <li><a href="#2Set_43" rel="nofollow">(2).Set</a></li> <li><a href="#3Queue_138" rel="nofollow">(3).Queue</a></li> </ul> </li> <li><a href="#2Map_143" rel="nofollow">2.Map</a></li> </ul> </li> <li><a href="#_154" rel="nofollow">补漏查缺小知识</a></li> <li><a href="#_174" rel="nofollow">参考</a></li> </ul> </div> <hr/> </h1> <p>这篇文章主要是介绍java容器的分类和一些用法。</p> <hr/> </h1> <p>为什么要引入Java容器？<br /> 我们知道，如果定义一个int数组，需要一开始就要制定它的大小。在一些情况下，我们根本不知道它的长度是多少，开辟很大的长度会导致空间浪费。<br /> 此外，数组还有很多缺点，例如数组中提供的方法非常有限，对于添加、删除、插入数据等操作，非常不便，同时效率不高。获取数据中实际元素的个数的需求，数组没有现成的属性或方法可用。数组存储数据的特点：有序、可重复。对于无序、不可重复的需求，不能满足。<br /> 为了数组能够更灵活的应用，提出了Java容器的概念。</p> </h1> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230223/a38be1ae5aac78a16b1394547dcd534a.jpg" alt="JAVA容器详解"><br /> Java的容器主要分为2个大类，即Collection和Map。Collection代表着集合，类似数组，只保存一个数字。而Map则是映射，保留键值对两个值。<br /> 根据图，首先提一下<code>List</code> <code>Queue</code> <code>Set</code> <code>Map</code> 这四个的区别。</p> <ul> <li> <code>List(对付顺序的好帮手)</code>: 存储的元素是有序的、可重复的。</li> <li> <code>Set (注重独一无二的性质)</code>：存储的元素是无序的、不可重复的。</li> <li> <code>Queue (实现排队功能的叫号机)</code>:按特定的排队规则来确定先后顺序，存储的元素是有序的、可重复的。</li> <li> <code>Map (用 key 来搜索的专家)</code> :使用键值对（key-value）存储，类似于数学上的函数 y=f(x)，“x” 代表 key，“y” 代表 value，key 是无序的、不可重复的，value 是无序的、可重复的，每个键最多映射到一个值。</li> </ul> <p>接下来我们就来深入探究一下吧。</p> <h2> <a id="1Collection_34" rel="nofollow"></a>1.Collection</h2> <h3> <a id="1List_36" rel="nofollow"></a>(1).List</h3> <table> <thead> <tr> <th>名称</th> <th>底层</th> <th>线程安全性</th> <th>优点</th> <th>扩容机制</th> </tr> </thead> <tbody> <tr> <td>ArrayList</td> <td>数组</td> <td>线程不安全</td> <td>查找快，增删慢</td> <td>首次创建长度为10，扩为1.5倍</td> </tr> <tr> <td>Vector</td> <td>数组</td> <td>线程同步<code>线程安全</code> </td> <td>查找快，增删慢</td> <td>首次创建长度为10，*2</td> </tr> <tr> <td>LinkedList</td> <td>双向链表(JDK1.6 之前为循环链表，JDK1.7 取消了循环)</td> <td>线程不安全</td> <td>增删快，查找慢</td> <td>不主动扩容</td> </tr> </tbody> </table> <h3> <a id="2Set_43" rel="nofollow"></a>(2).Set</h3> <table> <thead> <tr> <th>名称</th> <th>底层</th> <th>线程安全性</th> <th>备注</th> </tr> </thead> <tbody> <tr> <td>HashSet</td> <td>HashMap(数组+链表)</td> <td>线程不安全</td> <td>注意hashcode和equals()</td> </tr> <tr> <td>LinkedHashSet</td> <td>链表和哈希表</td> <td>线程不安全</td> <td>HashSet的子类，元素的插入和取出顺序满足 FIFO</td> </tr> <tr> <td>TreeSet</td> <td>红黑树</td> <td>线程不安全</td> <td>支持对元素自定义排序规则</td> </tr> </tbody> </table> <p>TreeSet中的自然排序和定制排序<br /> （1）自然排序：在所属的类中加上排序</p> <p>实现类</p> <pre><code class="prism language-java"><span class="token keyword">package</span> <span class="token class-name">TreeSet</span><span class="token punctuation">;</span>  <span class="token comment">//1.自然排序</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token punctuation">{<!-- --></span>     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>     <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>     <span class="token keyword">private</span> <span class="token keyword">int</span> score<span class="token punctuation">;</span>      <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">,</span><span class="token class-name">String</span> name<span class="token punctuation">,</span><span class="token keyword">int</span> score<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age<span class="token punctuation">;</span>         <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span>         <span class="token keyword">this</span><span class="token punctuation">.</span>score<span class="token operator">=</span>score<span class="token punctuation">;</span>     <span class="token punctuation">}</span>          <span class="token annotation punctuation">@Override</span>     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">//强制转换对象</span>         <span class="token comment">//按年龄和分数排序 都是从大到小</span>         <span class="token keyword">if</span><span class="token punctuation">(</span>o <span class="token keyword">instanceof</span> <span class="token class-name">Person</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token class-name">Person</span> <span class="token class-name">O</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">)</span> o<span class="token punctuation">;</span><span class="token comment">//强转类型</span>             <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">!=</span><span class="token class-name">O</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>             <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">-</span><span class="token class-name">O</span><span class="token punctuation">.</span>age<span class="token punctuation">;</span><span class="token comment">//this是当前的主体，此时返回的应该是升序</span>             <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token class-name">O</span><span class="token punctuation">.</span>score<span class="token operator">-</span><span class="token keyword">this</span><span class="token punctuation">.</span>score<span class="token punctuation">;</span>         <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"不属于此类型"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>      <span class="token annotation punctuation">@Override</span>     <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">return</span> <span class="token string">"Person{"</span> <span class="token operator">+</span>                 <span class="token string">"age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>                 <span class="token string">", name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>                 <span class="token string">", score="</span> <span class="token operator">+</span> score <span class="token operator">+</span>                 <span class="token char">'}'</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>测试类</p> <pre><code class="prism language-java"><span class="token keyword">package</span> <span class="token class-name">TreeSet</span><span class="token punctuation">;</span>  <span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token punctuation">]</span> person<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>         person<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">"guolu"</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"cherry"</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">"cherry"</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//别忘了这句话；</span>         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span>  </code></pre> <p>(2)定制排序：向其中传入已经重写Comparator中方法的对象。</p> <pre><code class="prism language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token punctuation">]</span> person<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>         person<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">"guolu"</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"cherry"</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"cherry"</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token class-name">Comparator</span> com<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Comparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             <span class="token annotation punctuation">@Override</span>             <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o1<span class="token punctuation">,</span> <span class="token class-name">Object</span> o2<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                 <span class="token class-name">Person</span> p1<span class="token operator">=</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">)</span>o1<span class="token punctuation">;</span>                 <span class="token class-name">Person</span> p2<span class="token operator">=</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">)</span>o2<span class="token punctuation">;</span>                 <span class="token keyword">return</span> p1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>p2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//得确保有get和set接口，这边好像不太好用compareTo,暂时不知道为啥</span>             <span class="token punctuation">}</span>         <span class="token punctuation">}</span><span class="token punctuation">;</span>         <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span>com<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <h3> <a id="3Queue_138" rel="nofollow"></a>(3).Queue</h3> <p>queue:单向队列<br /> deque:双向队列<br /> PriorityQueue 是非线程安全的，默认小顶堆，但可以接收一个 Comparator 作为构造参数，从而来自定义元素优先级的先后。</p> <h2> <a id="2Map_143" rel="nofollow"></a>2.Map</h2> <table> <thead> <tr> <th>名称</th> <th>底层</th> <th>线程安全性</th> <th>备注</th> <th>扩容机制</th> </tr> </thead> <tbody> <tr> <td>HashMap</td> <td>数组+链表（jdk7） 数组+链表+红黑树 （jdk8）</td> <td>线程不安全</td> <td>能存储null的key和value</td> <td>首次创建长度16，扩容2倍，jdk8中当数组的某一个索引位置上的元素以链表形式存在的数据个数&gt;8且当前的数组长度&gt;64时，此索引位置上的所有数据改为使用红黑树存储</td> </tr> <tr> <td>LinkedHashMap</td> <td>同hashmap</td> <td>线程不安全</td> <td>比hashmap多了指向前驱和后继的两个指针</td> <td></td> </tr> <tr> <td>ConcurrentHashMap</td> <td>同hashmap</td> <td>线程安全</td> <td>使用16个锁来控制segments,分段锁</td> <td></td> </tr> <tr> <td>HashTable</td> <td>数组+链表</td> <td>线程安全，全表锁</td> <td>不能存储null的key和value</td> <td>首次创建时长度为11，后来变为2n+1</td> </tr> <tr> <td>TreeMap</td> <td>红黑树</td> <td>线程不安全</td> <td>定制排序</td> <td></td> </tr> </tbody> </table> <hr/> </h1> <p>1.集合转换为数组</p> <pre><code class="prism language-java"><span class="token class-name">Collection</span> coll<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token class-name">Object</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span>coll<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>2.数组转换为集合<br /> asList后面的必须接引用类型</p> <pre><code class="prism language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list<span class="token operator">=</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{<!-- --></span><span class="token string">"AA"</span><span class="token punctuation">,</span><span class="token string">"BB"</span><span class="token punctuation">,</span><span class="token string">"CC"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p>3.红黑树<br /> 参考：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/u014454538/article/details/120120216"  rel="nofollow">红黑树</a></p> </h1> <p>javaguide、尚硅谷</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-21290.htm">广州宠物领养平台官网地址查询（广州宠物领养平台官网地址查询下载）</a></p>
+                                        <p>下一个：<a href="/news/article-21705.htm">狗粮品牌大全排行榜最新图片（狗粮品牌有哪些品牌）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-7-23-free-high-speed-nodes.htm" title="「7月23日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接">「7月23日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-30-loon-node-github.htm" title="「7月30日」最高速度19M/S，2024年Loon每天更新免费节点订阅链接">「7月30日」最高速度19M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-20-loon-github.htm" title="「7月20日」最高速度18.3M/S，2024年Loon每天更新免费节点订阅链接">「7月20日」最高速度18.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-29-free-node-subscribe-links.htm" title="「8月29日」最高速度20.5M/S，2024年Loon每天更新免费节点订阅链接">「8月29日」最高速度20.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-subscribe-node.htm" title="「11月19日」最高速度22.9M/S，2024年Loon每天更新免费节点订阅链接">「11月19日」最高速度22.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-11-loon-node-share.htm" title="「9月11日」最高速度19.8M/S，2024年Loon每天更新免费节点订阅链接">「9月11日」最高速度19.8M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-today-loon-node.htm" title="「12月4日」最高速度22.5M/S，2024年Loon每天更新免费节点订阅链接">「12月4日」最高速度22.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20373.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-13-loon-node.htm" title="「9月13日」最高速度21.5M/S，2024年Loon每天更新免费节点订阅链接">「9月13日」最高速度21.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-free-high-speed-nodes.htm" title="「10月7日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接">「10月7日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                        <p>
+                            <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
