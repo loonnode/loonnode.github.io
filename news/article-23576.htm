@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-23576.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>eslint在vue中如何使用</title>
+        <meta name="description" content="eslint帮助我们检查代码的是否规范，本文使用Prettier规则（还有standardjs、airbnb等规则），如果你想用eslint默认规则或者自行定义规则，可以不下载prettier相关依赖" />
+        <link rel="icon" href="__ADDON__/img/loonnode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                                        <a href="/">Loon Node</a>
+                                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">eslint在vue中如何使用</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="htmledit_views"> </h1> <p style="text-indent:33px;">eslint帮助我们检查代码的是否规范，本文使用Prettier规则（还有<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://standardjs.com/readme-zhcn.html"  rel="nofollow">standardjs</a>、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/airbnb/javascript"  rel="nofollow">airbnb</a>等规则），如果你想用eslint默认规则或者自行定义规则，可以不下载prettier相关依赖包（同时在.eslintrc.js删掉带‘prettier’的相关配置，不删除配置又没有下载prettier项目启动会报错）。我在vscode环境下载eslint插件可以在保存时根据rules格式化不规范的代码。</p> </h1> <p style="text-indent:33px;">&nbsp;"eslint"</p> <p style="text-indent:33px;">&nbsp;"babel-eslint"</p> <p style="text-indent:33px;">&nbsp;&nbsp;"eslint-config-prettier"</p> <p style="text-indent:33px;">&nbsp;&nbsp;"eslint-loader"</p> <p style="text-indent:33px;">&nbsp;&nbsp;"eslint-plugin-prettier"</p> <p style="text-indent:33px;">&nbsp;&nbsp;&nbsp;"eslint-plugin-vue"</p> </h1> <p style="text-indent:33px;">在项目根目录新建文件.eslintrc.js，内容如下（可根据自己的需求配置）：</p> <pre><code class="language-javascript">module.exports = {   root: true, // 只将当前项目应用此规则   parserOptions: {     "parser": "babel-eslint",     "sourceType": 'module', // 设置为  "module" ，"script" (默认)     // "ecmaVersion": 6 // 启用es6语法，不自动启用es6全局变量   },   parser: "vue-eslint-parser", // 识别.vue文件 需下载eslint-plugin-vue   // 想启用的环境   env: {     "browser": true,     "node": true,     "es6": true   },    //继承插件的规则   extends: [     "eslint:recommended", // 启动被标记为 “√” 默认规则     "plugin:prettier/recommended" // 别人写好的规则，依赖包eslint-config-***，这里用的是prettier规则   ],   // 配置插件名字的列表。插件名称可以省略 ‘eslint-plugin- ’前缀。   plugins: [      'vue', // eslint-plugin-vue     'prettier' // eslint-plugin-prettier   ],   // 自定义规则 优先级最高   "rules": {     "no-console": 0   } }</code></pre> <p style="text-indent:33px;"> </h1> <p style="text-indent:33px;">vscode下载插件eslint,打开settings.json文件，添加：</p> <p style="text-indent:33px;">"editor.codeActionsOnSave":&nbsp;{<!-- --></p> <p style="text-indent:33px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"source.fixAll.eslint":&nbsp;true</p> <p style="text-indent:33px;">&nbsp;&nbsp;&nbsp;&nbsp;},</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220609/6fe1cdf918a2e31209575411b72410f5.jpg"></p> <p>其他版本配置或略有不同，比如在版本1.36.1上如图配置方可生效</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220609/31792b6daa2151744b09e407466e3d36.jpg"></p> </h1> <p>&nbsp;"eslint":&nbsp;"eslint&nbsp;--fix&nbsp;--ext&nbsp;.js,.vue&nbsp;--ignore-path&nbsp;.eslintignore&nbsp;."</p> <p>&nbsp; eslintignore是配置检测时忽略的文件</p> <p style="text-align:center;"><img fetchpriority="high" decoding="async" alt="" height="153" src="http://img.555519.xyz/uploads3/20220609/42d851e3412a352701fd733e6fa02a14.jpg"></p> </h1> <p style="text-indent:33px;">这里以vue-cli3及以上版本为例，只需在vue.config.js中添加如下配置</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; lintOnSave: false</p> </h1> <p style="text-indent:33px;"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://eslint.bootcss.com/docs/user-guide/getting-started"  rel="nofollow">https://eslint.bootcss.com/docs/user-guide/getting-started</a></p> <p style="text-indent:33px;"> <p>有问题欢迎留言。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-23574.htm">Python 操作HDFS</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-8-1-free-high-speed-nodes.htm" title="「8月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接">「8月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-19-node-share-links.htm" title="「7月19日」最高速度22.9M/S，2024年Netch每天更新免费节点订阅链接">「7月19日」最高速度22.9M/S，2024年Netch每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-today-loon-node.htm" title="「11月12日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接">「11月12日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-loon-github.htm" title="「12月7日」最高速度19.5M/S，2024年Loon每天更新免费节点订阅链接">「12月7日」最高速度19.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-27-linux-loon-github.htm" title="「8月27日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接">「8月27日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-loon-node-github.htm" title="「9月27日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接">「9月27日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-free-high-speed-nodes.htm" title="「10月7日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接">「10月7日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-22-free-subscribe-node.htm" title="「8月22日」最高速度22.7M/S，2024年Loon每天更新免费节点订阅链接">「8月22日」最高速度22.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18778.htm" title="青岛动物防治中心（青岛动物防治中心官网）">青岛动物防治中心（青岛动物防治中心官网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-25-linux-loon-github.htm" title="「7月25日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「7月25日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                        <p>
+                            <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
