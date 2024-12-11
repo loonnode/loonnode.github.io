@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-24259.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PHP重载</title>
+        <meta name="description" content="介绍 与其他面向对象的语言（例如C ++或Java）相比，PHP中对重载的解释是不同的，其中该术语表示具有使用相同名称的方法多次但具有不同参数和/或返回类型的类的能力。另一方面，在PHP中，动态创建属" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                                        <a href="/">Loon Node</a>
+                                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">PHP重载</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<h2>介绍</h2> <p>与其他面向对象的语言（例如C ++或Java）相比，PHP中对重载的解释是不同的，其中该术语表示具有使用相同名称的方法多次但具有不同参数和/或返回类型的类的能力。另一方面，在PHP中，动态创建属性和方法的功能称为重载。PHP的<strong>魔术方法</strong>（方法名称以双下划线开头）用于设置动态属性和方法。</p> <p>以下魔术方法用于重载属性-</p> <h2>语法</h2> <pre>public&nbsp;__set&nbsp;(&nbsp;string&nbsp;$name&nbsp;,&nbsp;mixed&nbsp;$value&nbsp;)&nbsp;:&nbsp;void public&nbsp;__get&nbsp;(&nbsp;string&nbsp;$name&nbsp;)&nbsp;:&nbsp;mixed public&nbsp;__isset&nbsp;(&nbsp;string&nbsp;$name&nbsp;)&nbsp;:&nbsp;bool public&nbsp;__unset&nbsp;(&nbsp;string&nbsp;$name&nbsp;)&nbsp;:&nbsp;void</pre> <p>运行__set()以便将数据写入受保护的，私有的或不存在的不可访问的属性。</p> <p>__get()从不可访问的属性读取数据。</p> <p>__isset()调用<code>isset()</code>或<code>empty()</code>无法访问的属性。</p> <p><code>unset()</code>在无法访问的属性上调用__unset()时会被调用。</p> <p>在以下代码中，设置，检索和取消设置了名为<strong>myprop</strong>的动态属性。</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;__set($name,&nbsp;$value){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"setting&nbsp;$name&nbsp;property&nbsp;to&nbsp;$value&nbsp;\n"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;$name&nbsp;=&nbsp;$value; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;__get($name){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"value&nbsp;of&nbsp;$name&nbsp;property&nbsp;is&nbsp;"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$this-&gt;$name; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;__isset($name){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;isset($this-&gt;$name); &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;__unset($name){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unset($this-&gt;$name); &nbsp;&nbsp;&nbsp;} } $obj&nbsp;=&nbsp;new&nbsp;myclass(); $obj-&gt;myprop="test"; echo&nbsp;$obj-&gt;myprop&nbsp;.&nbsp;"\n"; var_dump&nbsp;(isset($obj-&gt;myprop)); unset($obj-&gt;myprop); var_dump&nbsp;(isset($obj-&gt;myprop)); ?&gt;</pre> <p>输出结果</p> <p>输出如下-</p> <pre>setting&nbsp;myprop&nbsp;property&nbsp;to&nbsp;test test bool(true) bool(false)</pre> <h2>方法重载</h2> <p>用于动态设置方法的两个魔术方法是__call()和__callStatic()</p> <pre>public&nbsp;__call&nbsp;(&nbsp;string&nbsp;$name&nbsp;,&nbsp;array&nbsp;$arguments&nbsp;)&nbsp;:&nbsp;mixed public&nbsp;static&nbsp;__callStatic&nbsp;(&nbsp;string&nbsp;$name&nbsp;,&nbsp;array&nbsp;$arguments&nbsp;)&nbsp;:&nbsp;mixed</pre> <p>在对象上下文中调用不可访问的方法时，会触发__call()。</p> <p>在静态上下文中调用不可访问的方法时，会触发__callStatic()。</p> <p>以下示例演示了PHP中的方法重载</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;__call($name,&nbsp;$args){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//注意：$name的值区分大小写。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Calling&nbsp;object&nbsp;method&nbsp;$name&nbsp;with&nbsp;"&nbsp;.&nbsp;implode("&nbsp;",&nbsp;$args).&nbsp;"\n"; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;__callStatic($name,&nbsp;$args){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Calling&nbsp;static&nbsp;method&nbsp;$name&nbsp;with&nbsp;"&nbsp;.&nbsp;implode("&nbsp;",&nbsp;$args).&nbsp;"\n"; &nbsp;&nbsp;&nbsp;} } $obj&nbsp;=&nbsp;new&nbsp;myclass(); $obj-&gt;mymethod("你好，世界！"); myclass::mymethod("你好，世界！"); ?&gt;</pre> <p>输出结果</p> <p>上面的代码产生以下结果：</p> <pre>Calling&nbsp;object&nbsp;method&nbsp;mymethod&nbsp;with&nbsp;你好，世界！ Calling&nbsp;static&nbsp;method&nbsp;mymethod&nbsp;with&nbsp;你好，世界！</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-24035.htm">领养宠物赚收益是真的吗吗（领养宠物赚收益是真的吗吗安全吗）</a></p>
+                                        <p>下一个：<a href="/news/article-24260.htm">疫苗瓶回收处理（疫苗空瓶回收登记表）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-22-loon-github.htm" title="「9月22日」最高速度21.8M/S，2024年Loon每天更新免费节点订阅链接">「9月22日」最高速度21.8M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-20-loon-github.htm" title="「7月20日」最高速度18.3M/S，2024年Loon每天更新免费节点订阅链接">「7月20日」最高速度18.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-1-free-high-speed-nodes.htm" title="「8月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接">「8月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24034.htm" title="SpringBoot2.3应用制作Docker镜像详解">SpringBoot2.3应用制作Docker镜像详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-27-loon-node-github.htm" title="「7月27日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接">「7月27日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-loon-github.htm" title="「11月13日」最高速度18.7M/S，2024年Loon每天更新免费节点订阅链接">「11月13日」最高速度18.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-5-linux-loon-github.htm" title="「8月5日」最高速度22M/S，2024年Loon每天更新免费节点订阅链接">「8月5日」最高速度22M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20374.htm" title="宠物粮食品牌前十名排行榜有哪些品种的狗（宠物粮种类）">宠物粮食品牌前十名排行榜有哪些品种的狗（宠物粮种类）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-node-subscribe.htm" title="「11月18日」最高速度22.2M/S，2024年Loon每天更新免费节点订阅链接">「11月18日」最高速度22.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-loon-node.htm" title="「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接">「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                        <p>
+                            <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
