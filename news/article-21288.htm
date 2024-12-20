@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>编译python(cpython)的源码及其用途</title>
         <meta name="description" content="获取python的源码 3.x及最新版本的源码：https://github.com/python/cpython python2.7分支的源码：https://github.com/python/c" />
-        <link rel="icon" href="__ADDON__/img/loonnode/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
@@ -92,7 +92,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<h2 id="获取python的源码">获取python的源码</h2> <p>3.x及最新版本的源码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/python/cpython"  target="_blank" rel="nofollow">https://github.com/python/cpython</a></p> <p>python2.7分支的源码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/python/cpython/tree/v2.7.18"  target="_blank" rel="nofollow">https://github.com/python/cpython/tree/v2.7.18</a></p> <p>python官网也提供源码下载：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.python.org/downloads/source"  target="_blank" rel="nofollow">https://www.python.org/downloads/source</a></p> <blockquote> <p>ps. 对比过从官网下载的源码和github内容是一样的</p> </blockquote> <p>python的源码是由C语言编写的，所以叫cpython</p> <p></p> <h2 id="编译python源码">编译python源码</h2> <blockquote> <p>我是在windows上编译python2.7的源码，可能还需要安装windows sdk，我的系统上已安装。</p> </blockquote> <p>使用vs2012及以上版本打开PCbuild目录下的pcbuild.sln，如果提示升级解决方案，请不要升级</p> <p>选中python这个project，设置python为启动项目</p> <p>选中解决方案(pcbuild) - 右键 - 配置管理器，在生成这列只勾选python和pythoncore</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/654621f43e3847c0003225395fe9752b.jpg" alt="编译python(cpython)的源码及其用途"></p> <p>选中python 和pythoncore - 右键 - 平台工具集(platform toolset)设置为2012，因为我们没有安装它默认的2008，否则会生成失败报未安装vs2008的工具集</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7bb3ff3c7152cd1b6cef9ca9cdbc5857.jpg" alt="编译python(cpython)的源码及其用途"></p> <p>点击生成，在PCbuild目录下会生成python.exe，如果是debug则会生成python_d.exe</p> <p></p> <h2 id="使用编译出来的python">使用编译出来的python</h2> <p>当把python作为游戏的脚本语言，为保护游戏不被反编译我们需要对python脚本进行加密，及需要对cpython源码做少量的修改让它更适合游戏领域。</p> <p>我们把编译出来的python.exe单独拷贝出来，就可以用它来执行python脚本了，如下所示</p> <pre><code class="language-python">PS E:\mypython&gt; .\python.exe hello.py hello PS E:\mypython&gt; .\python.exe Python 2.7.18 (tags/2.7-dirty:8d21aa21f2, Apr  5 2022, 14:59:21) [MSC v.1700 32 bit (Intel)] on win32 Type "help", "copyright", "credits" or "license" for more information.</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e9c58c46f94eeab839c524a5c56a1350.jpg" alt="编译python(cpython)的源码及其用途"></p> <p></p> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="获取python的源码">获取python的源码</h2> <p>3.x及最新版本的源码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/python/cpython"  target="_blank" rel="nofollow">https://github.com/python/cpython</a></p> <p>python2.7分支的源码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/python/cpython/tree/v2.7.18"  target="_blank" rel="nofollow">https://github.com/python/cpython/tree/v2.7.18</a></p> <p>python官网也提供源码下载：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.python.org/downloads/source"  target="_blank" rel="nofollow">https://www.python.org/downloads/source</a></p> <blockquote> <p>ps. 对比过从官网下载的源码和github内容是一样的</p> </blockquote> <p>python的源码是由C语言编写的，所以叫cpython</p> <p></p> <h2 id="编译python源码">编译python源码</h2> <blockquote> <p>我是在windows上编译python2.7的源码，可能还需要安装windows sdk，我的系统上已安装。</p> </blockquote> <p>使用vs2012及以上版本打开PCbuild目录下的pcbuild.sln，如果提示升级解决方案，请不要升级</p> <p>选中python这个project，设置python为启动项目</p> <p>选中解决方案(pcbuild) - 右键 - 配置管理器，在生成这列只勾选python和pythoncore</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/654621f43e3847c0003225395fe9752b.jpg" alt="编译python(cpython)的源码及其用途"></p> <p>选中python 和pythoncore - 右键 - 平台工具集(platform toolset)设置为2012，因为我们没有安装它默认的2008，否则会生成失败报未安装vs2008的工具集</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7bb3ff3c7152cd1b6cef9ca9cdbc5857.jpg" alt="编译python(cpython)的源码及其用途"></p> <p>点击生成，在PCbuild目录下会生成python.exe，如果是debug则会生成python_d.exe</p> <p></p> <h2 id="使用编译出来的python">使用编译出来的python</h2> <p>当把python作为游戏的脚本语言，为保护游戏不被反编译我们需要对python脚本进行加密，及需要对cpython源码做少量的修改让它更适合游戏领域。</p> <p>我们把编译出来的python.exe单独拷贝出来，就可以用它来执行python脚本了，如下所示</p> <pre><code class="language-python">PS E:\mypython&gt; .\python.exe hello.py hello PS E:\mypython&gt; .\python.exe Python 2.7.18 (tags/2.7-dirty:8d21aa21f2, Apr  5 2022, 14:59:21) [MSC v.1700 32 bit (Intel)] on win32 Type "help", "copyright", "credits" or "license" for more information.</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e9c58c46f94eeab839c524a5c56a1350.jpg" alt="编译python(cpython)的源码及其用途"></p> <p></p> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-20832.htm">狗狗领养协议模板下载安装（领养狗狗签协议）</a></p>
                                         <p>下一个：<a href="/news/article-21290.htm">广州宠物领养平台官网地址查询（广州宠物领养平台官网地址查询下载）</a></p>
@@ -105,16 +106,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-27-loon-node.htm" title="「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接">「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-today-loon-node.htm" title="「12月15日」最高速度18.1M/S，2024年Loon每天更新免费节点订阅链接">「12月15日」最高速度18.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25905.htm" title="中国兽药十大名牌排行榜简介 中国兽药十大名牌排行榜简介图片">中国兽药十大名牌排行榜简介 中国兽药十大名牌排行榜简介图片</a></li>
+                        <li class="py-2"><a href="/news/article-18779.htm" title="动物疫苗生产厂家排名榜单图片高清（动物疫苗上市公司排名）">动物疫苗生产厂家排名榜单图片高清（动物疫苗上市公司排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-19-loon-windows.htm" title="「8月19日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接">「8月19日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26369.htm" title="狗粮颗粒机成型原理图（狗粮颗粒机成型原理图片）">狗粮颗粒机成型原理图（狗粮颗粒机成型原理图片）</a></li>
+                        <li class="py-2"><a href="/news/article-26372.htm" title="动物医院名称大全图片英文（动物的医院叫什么名字）">动物医院名称大全图片英文（动物的医院叫什么名字）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-17-loon-node.htm" title="「8月17日」最高速度21.2M/S，2024年Loon每天更新免费节点订阅链接">「8月17日」最高速度21.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-12-6-latest-loon-node.htm" title="「12月6日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接">「12月6日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-23-free-high-speed-nodes.htm" title="「7月23日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接">「7月23日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-18-loon-node-github.htm" title="「10月18日」最高速度22.9M/S，2024年Loon每天更新免费节点订阅链接">「10月18日」最高速度22.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20374.htm" title="宠物粮食品牌前十名排行榜有哪些品种的狗（宠物粮种类）">宠物粮食品牌前十名排行榜有哪些品种的狗（宠物粮种类）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-28-loon-node-share.htm" title="「9月28日」最高速度18.7M/S，2024年Loon每天更新免费节点订阅链接">「9月28日」最高速度18.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-node-subscribe.htm" title="「10月28日」最高速度18.5M/S，2024年Loon每天更新免费节点订阅链接">「10月28日」最高速度18.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-1-node-share-links.htm" title="「10月1日」最高速度20.8M/S，2024年Loon每天更新免费节点订阅链接">「10月1日」最高速度20.8M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-22206.htm" title="动物医院申请条件有哪些内容和要求呢英文（动物医院用英文怎么说）">动物医院申请条件有哪些内容和要求呢英文（动物医院用英文怎么说）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-node-subscribe.htm" title="「11月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接">「11月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-loon-node.htm" title="「12月16日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接">「12月16日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-9-free-node-subscribe-links.htm" title="「8月9日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接">「8月9日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -126,7 +127,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -158,6 +159,15 @@
             <div class="container">
                 <div class="row ">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                         <p>
                             <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
                         </p>
