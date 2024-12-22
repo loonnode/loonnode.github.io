@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-29148.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>spring boot actuator监控详细介绍一(超级详细)</title>
+        <meta name="description" content="spring boot actuator介绍   Spring Boot包含许多其他功能，可帮助您在将应用程序推送到生产环境时监视和管理应用程序。   您可以选择使用HTTP端点或JMX来管理和监视应" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                                        <a href="/">Loon Node</a>
+                                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">spring boot actuator监控详细介绍一(超级详细)</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="spring_boot_actuator_0" rel="nofollow"></a>spring boot actuator介绍</h2> <ul> <li> <p>Spring Boot包含许多其他功能，可帮助您在将应用程序推送到生产环境时监视和管理应用程序。</p> </li> <li> <p>您可以选择使用HTTP端点或JMX来管理和监视应用程序。</p> </li> <li> <p>审核，运行状况和指标收集也可以自动应用于您的应用程序。</p> </li> </ul> <h6> <a id="Spring_Boot_Actuator_8" rel="nofollow"></a>总之Spring Boot Actuator就是一款可以帮助你监控系统数据的框架,其可以监控很多很多的系统数据,它有对应用系统的自省和监控的集成功能，可以查看应用配置的详细信息,如:</h6> <ul> <li> <p>显示应用程序员的Health健康信息</p> </li> <li> <p>显示Info应用信息</p> </li> <li> <p>显示HTTP Request跟踪信息</p> </li> <li> <p>显示当前应用程序的“Metrics”信息</p> </li> <li> <p>显示所有的@RequestMapping的路径信息</p> </li> <li> <p>显示应用程序的各种配置信息</p> </li> <li> <p>显示你的程序请求的次数 时间 等各种信息</p> </li> </ul> <p><strong>等等等等…总之很成熟,很强大.</strong></p> <h2> <a id="_24" rel="nofollow"></a>使用介绍:</h2> <p><strong>1. 先在pom.xml中添加依赖:</strong></p> <pre><code>&lt;dependency&gt;      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;      &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;  &lt;/dependency&gt; </code></pre> <p>对于Gradle，请使用以下声明：</p> <pre><code>dependencies {           compile("org.springframework.boot:spring-boot-starter-actuator")  } </code></pre> <p><strong>2. 所有的监控端点endpoints介绍:</strong></p> <table> <thead> <tr> <th>ID</th> <th>描述</th> </tr> </thead> <tbody> <tr> <td>auditevents</td> <td>公开当前应用程序的审核事件信息。</td> </tr> <tr> <td>beans</td> <td>显示应用程序中所有Spring bean的完整列表。</td> </tr> <tr> <td>caches</td> <td>暴露可用的缓存。</td> </tr> <tr> <td>conditions</td> <td>显示在配置和自动配置类上评估的条件以及它们匹配或不匹配的原因。</td> </tr> <tr> <td>configprops</td> <td>显示所有的整理列表@ConfigurationProperties,查看配置属性，包括默认配置</td> </tr> <tr> <td>env</td> <td>露出Spring的属性的各种环境变量,后面可跟/{name}查看具体的值</td> </tr> <tr> <td>flyway</td> <td>显示已应用的任何Flyway数据库迁移。</td> </tr> <tr> <td>health</td> <td>显示应用健康信息,在spring boot2.0以后需要在配置里show-details打开所有健康信息</td> </tr> <tr> <td>httptrace</td> <td>显示HTTP跟踪信息（默认情况下，最后100个HTTP请求 - 响应交换）,2.0以后需要手动打开</td> </tr> <tr> <td>info</td> <td>显示任意应用信息,是在配置文件里自己定义的</td> </tr> <tr> <td>integrationgraph</td> <td>显示Spring Integration图。</td> </tr> <tr> <td>loggers</td> <td>显示和修改应用程序中记录器的配置。</td> </tr> <tr> <td>liquibase</td> <td>显示已应用的任何Liquibase数据库迁移。</td> </tr> <tr> <td>metrics</td> <td>显示当前应用程序的“指标”信息,比如内存用量和HTTP请求计数,后可跟/{name}查看具体值</td> </tr> <tr> <td>mappings</td> <td>显示所有@RequestMapping路径的整理列表。</td> </tr> <tr> <td>scheduledtasks</td> <td>显示应用程序中的计划任务。</td> </tr> <tr> <td>sessions</td> <td>允许从Spring Session支持的会话存储中检索和删除用户会话。使用Spring Session对响应式Web应用程序的支持时不可用</td> </tr> <tr> <td>shutdown</td> <td>允许应用程序正常关闭。</td> </tr> <tr> <td>threaddump</td> <td>执行线程转储。</td> </tr> </tbody> </table> <p>如果您的应用程序是Web应用程序（Spring MVC，Spring WebFlux或Jersey），则可以使用以下附加端点：</p> <table> <thead> <tr> <th>ID</th> <th>描述</th> </tr> </thead> <tbody> <tr> <td>heapdump</td> <td>返回hprof堆转储文件。</td> </tr> <tr> <td>jolokia</td> <td>通过HTTP公开JMX bean（当Jolokia在类路径上时，不适用于WebFlux）。</td> </tr> <tr> <td>logfile</td> <td>返回日志文件的内容（如果已设置logging.file或logging.path属性）。支持使用HTTP Range标头检索部分日志文件的内容。</td> </tr> <tr> <td>prometheus</td> <td>以可以由Prometheus服务器抓取的格式公开指标。</td> </tr> </tbody> </table> <p><strong>注意事项:</strong></p> <ol> <li>在spring boot 2.0以后,actuator默认只开启了info和health两个端点,要想使用其他的端点,需要在application.yml中打开:</li> </ol> <pre><code>management:     endpoints:       web:          exposure:             include:"*" </code></pre> <p>注意:</p> <p>在这里include: “*” ,这个"“双引号是必须要,在application.properties是不需要”"双引号的,application.properties中是这样的:<code>management.endpoints.web.exposure.include=*</code></p> <ol start="3"> <li> <p>而且所有的端点都以默认的路径http://localhost:8080/actuator 开始;</p> <p>如我们查看info端点的信息就是访问:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8080/actuator/info"  rel="nofollow">http://localhost:8080/actuator/info</a></p> </li> <li> <p>Timestamps时间戳: 端点消耗的所有时间戳（作为查询参数或在请求正文中）必须格式化为ISO 8601中指定的偏移日期和时间 。 默认的时间戳是跟我们中国的时区不符合的.</p> </li> <li> <p>actuator的大部分监控请求都是以get请求的.只有少数是post请求.</p> </li> <li> <p>如果想更改默认的actuator启动路径,可以在application.yml中更改,如我们改成 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8080/"  rel="nofollow">http://localhost:8080/</a></p> </li> </ol> <pre><code>#调整端点的前缀路径为/    management:        endpoints:           web:              base-path: / </code></pre> <p>并且health端点的信息默认也是显示的不具体的,请看默认的health是显示的什么:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/99a3cd2ae090b155598476d14fc8acce.jpg" alt="spring boot actuator监控详细介绍一(超级详细)"><br /> "UP"就是安全健康的,"DOWN"就是有问题了.</p> <ol start="7"> <li>在application.yml中开启所有的Heanth监控数据:</li> </ol> <pre><code>management:      endpoint:           health:              show-details:always  #显示健康具体信息  默认不会显示详细信息 </code></pre> <p>我的application.yml是这样的:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/9264661bb12508e69769f0b6ca3b7979.jpg" alt="spring boot actuator监控详细介绍一(超级详细)"><br /> 现在你可以开启服务,试试这些端点的监控数据,因为我已经把监控的路径改成了 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8088"  rel="nofollow">http://localhost:8088</a> 了.所以可以直接在后面跟端点的名称,如果你没有更改路径,默认的启动路径是 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8088/actuator/"  rel="nofollow">http://localhost:8088/actuator/</a> ,然后后面才跟你要监控的端点名称:</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8088/metrics"  rel="nofollow">http://localhost:8088/metrics</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8088/mappings"  rel="nofollow">http://localhost:8088/mappings</a></p> <p>端点Metrics监控的数据结果如下<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/59d843a71fa4885987af367928be59b6.jpg" alt="spring boot actuator监控详细介绍一(超级详细)"><br /> 这些数据都是可以监控到的,“磁盘使用率”,这个是我自定义的metrics端点信息,在下面的文章中我会教大家怎么自定义你想要的端点,如果你想看更具体的请在路径后面加上你要看的数据,/{name},如:<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8088/metrics/jvm.memory.used"  rel="nofollow">http://localhost:8088/metrics/jvm.memory.used</a><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/1a82085e8041db3abb030fef3c020205.jpg" alt="spring boot actuator监控详细介绍一(超级详细)"><br /><strong>自定义info信息:</strong></p> <p>在pom.xml中添加依赖,可以访问到pom.xml的信息,如果不加这个,你在application.yml中定义的info信息是不会获取到的:</p> <pre><code>&lt;plugin&gt;      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;      &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;      &lt;version&gt;2.6&lt;/version&gt;      &lt;configuration&gt;          &lt;delimiters&gt;              &lt;delimiter&gt;@&lt;/delimiter&gt;          &lt;/delimiters&gt;          &lt;useDefaultDelimiters&gt;false&lt;/useDefaultDelimiters&gt;      &lt;/configuration&gt;  &lt;/plugin&gt; </code></pre> <p>在application.yml中这样配置:</p> <pre><code>#自定义info端点查看应用相关的信息   info:     encoding:       @project.build.sourceEncoding@     traget:       @java.version@     name:       @project.name@     description:      @project.description@ </code></pre> <p>访问 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8088/info"  rel="nofollow">http://localhost:8088/info</a> ,运行结果为:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/682ecc5dea718ed64a82094f2ada247e.jpg" alt="spring boot actuator监控详细介绍一(超级详细)"><br /><strong>但是如果你只想打开某个端点,我们是这样的配置的,同样式在application.yml中:</strong></p> <pre><code>management:      endpoint:            端点名称:                enabled: true </code></pre> <p><strong>使用Spring Security来保证Actuator Endpoints安全:</strong></p> <p>在pom.xml中添加依赖:</p> <pre><code>&lt;dependency&gt;      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;      &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;  &lt;/dependency&gt; </code></pre> <p>在application.yml中这样配置:<strong>这里是在spring boot2.0以后的版本中,在2.0之前不是这样的,稍微有差别</strong>:</p> <pre><code> # http安全机制     security:       user:         name: li         password: 123         roles: ADMIN </code></pre> <p>然后启动你的服务,你会发现有个登录页面,需要你输入我们配置的账号密码:</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230202/3be6682678c99af3e0ed12989f361021.jpg" alt="spring boot actuator监控详细介绍一(超级详细)"><br /> 需要注意,spring boot2.0以后和之前的Security配置有所不同,我有一篇文章提到了!!!</p> <p>自定义端点:</p> <p>首先自定义健康监测的端点Health:</p> <p>自定义健康监测的端点有两种方式:</p> <ol> <li>继承AbstractHealthIndicator类 2. 实现HealthIndicator接口。</li> </ol> <p>自定义端点的文章 请看第二章节 谢谢支持</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28695.htm">青浦二中本科录取率（青浦二中本科录取率2019）</a></p>
+                                        <p>下一个：<a href="/news/article-29152.htm">动物疫苗价格一览表图片高清大图下载（动物疫苗价格一览表图片高清大图下载）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-node-share-links.htm" title="「9月30日」最高速度18.6M/S，2024年Loon每天更新免费节点订阅链接">「9月30日」最高速度18.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-loon-node.htm" title="「10月20日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接">「10月20日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19457.htm" title="我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）">我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）</a></li>
+                        <li class="py-2"><a href="/news/article-27760.htm" title="成都宠物领养中心领养收费吗多少钱一个月（成都宠物领养机构）">成都宠物领养中心领养收费吗多少钱一个月（成都宠物领养机构）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-free-subscribe-node.htm" title="「11月7日」最高速度21.1M/S，2024年Loon每天更新免费节点订阅链接">「11月7日」最高速度21.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-latest-loon-node.htm" title="「11月30日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接">「11月30日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-node-share.htm" title="「12月17日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接">「12月17日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-5-linux-loon-github.htm" title="「9月5日」最高速度19.8M/S，2024年Loon每天更新免费节点订阅链接">「9月5日」最高速度19.8M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-9-free-node-subscribe-links.htm" title="「8月9日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接">「8月9日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-18-free-loon-node.htm" title="「9月18日」最高速度20M/S，2024年Loon每天更新免费节点订阅链接">「9月18日」最高速度20M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
