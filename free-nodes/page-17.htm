@@ -2,13 +2,12 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://loonnode.github.io/news/article-30578.htm" />
+        <link rel="canonical" href="https://loonnode.github.io/free-nodes/page-17.htm" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>PHP与JSON的一些常用操作</title>
-        <meta name="description" content="PHP把数据写入JSON文件 &lt;?php // 生成一个PHP数组 $data  =  array (); $data ["fruit"] = "apple" ; $data ["animal"" />
+    <title>免费节点 - Loon Node机场订阅站 - 第16页</title>
         <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +40,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="detail">
+<body data-page="category">
         <!-- header-section-->
     <div class="header-wrapper">
         <div class="container-fluid">
@@ -77,9 +76,9 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div data-aos="fade-up" class="page-caption">
-                        <h1 class="page-title">PHP与JSON的一些常用操作</h1>
+                        <h1 class="page-title">免费节点</h1>
                         <div class="nav-box">
-                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            <a href="/">首页</a> / <span>免费节点</span>
                         </div>
                     </div>
                 </div>
@@ -87,18 +86,31 @@
         </div>
     </div>
     <!-- /.page-header-->
-    <!-- attorney-section -->
+        <!-- attorney-section -->
     <div class="space-medium bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
-                  				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <h4> <a id="PHPJSON_2" rel="nofollow"></a>PHP把数据写入JSON文件</h4> <pre><code class="prism language-php"><span class="token delimiter important">&lt;?php</span> <span class="token comment">// 生成一个PHP数组</span> <span class="token variable">$data</span>  <span class="token operator">=</span>  <span class="token keyword">array</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token variable">$data</span> <span class="token punctuation">[</span><span class="token double-quoted-string string">"fruit"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token double-quoted-string string">"apple"</span> <span class="token punctuation">;</span> <span class="token variable">$data</span> <span class="token punctuation">[</span><span class="token double-quoted-string string">"animal"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token double-quoted-string string">"tiget"</span><span class="token punctuation">;</span>   <span class="token comment">// 把PHP数组转成JSON字符串,写入文件</span> <span class="token variable">$json_string</span>  <span class="token operator">=</span> <span class="token function">json_encode</span><span class="token punctuation">(</span> <span class="token variable">$data</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?&gt;</span> </code></pre> <h4> <a id="PHPJSON_16" rel="nofollow"></a>PHP读取JSON数据?</h4> <pre><code class="prism language-php"><span class="token delimiter important">&lt;?php</span> <span class="token comment">// 从文件中读取数据到PHP变量</span> <span class="token variable">$str</span> <span class="token operator">=</span>  file_get_contents <span class="token punctuation">(</span> <span class="token single-quoted-string string">'one.json'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 把JSON字符串转成PHP数组,并显示</span> <span class="token variable">$data</span>  <span class="token operator">=</span> <span class="token function">json_decode</span><span class="token punctuation">(</span> <span class="token variable">$str</span> <span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">print_r</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?&gt;</span> </code></pre> <h4> <a id="jsgetElementByIDPHP_29" rel="nofollow"></a>js通过getElementByID获取PHP数据</h4> <pre><code class="prism language-php+HTML">&lt;html&gt;  &lt;head&gt;     &lt;meta charset="utf-8"&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;     &lt;style&gt;      &lt;/style&gt;      &lt;script type="text/JavaScript"&gt;         function test()         {                 alert(document.getElementById("hid").value)         }  &lt;/script&gt; &lt;/head&gt;  &lt;body&gt;     &lt;?php     $data = array("fruit" =&gt; ["apple", "banana", "aa"], "animal" =&gt; "tiger");   // 定义一个数组     $data = json_encode($data);  //转成json格式     ?&gt;     &lt;form method="post" action="hh.php"&gt;         &lt;input type="hidden" id="hid" name="hid" value="&lt;?php print_r($data); ?&gt;"&gt;         &lt;input type="button" value="点击" οnclick="test()"&gt;     &lt;/form&gt; &lt;/body&gt;  &lt;/html&gt; </code></pre> <h4> <a id="PHPjs_64" rel="nofollow"></a>PHP向js传递数组</h4> <pre><code class="prism language-php+HTML">&lt;!DOCTYPE HTML&gt; &lt;html&gt;  &lt;head&gt;     &lt;meta charset="utf-8"&gt; &lt;/head&gt;  &lt;body&gt;     &lt;script&gt;         function add(array) {             alert(array);         }     &lt;/script&gt;     &lt;?php     $arr = array('1', '2', '3', '4', '5');     $str = json_encode($arr);     echo "&lt;input type='button' name='insert' value='点击' onClick='add($str)'&gt;";     ?&gt; &lt;/body&gt;  &lt;/html&gt; </code></pre> </p></div> 			                <div class="clearfix"></div>
-                <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-30575.htm">PHP通过引用返回</a></p>
-                                        <p>下一个：<a href="/news/article-31043.htm">兽用疫苗稀释液的说明书怎么写（兽用疫苗专用稀释液成分）</a></p>
-                                    </div>
+                    <div class="xcblog-blog-list">
+                                                <div class="row item xcblog-blog-item" data-date="2024-07-19">
+                            <div class="col-md-3">
+                                <div class="team-block">
+                                    <a href="/free-nodes/2024-7-19-node-share-links.htm" class="xcblog-blog-url">
+                                        <img src="/uploads/20240719/aae2500a67ab2984d0180733b376fd42.webp" alt="「7月19日」最高速度22.9M/S，2024年Netch每天更新免费节点订阅链接" class="img-fluid border">
+                                    </a>
                                 </div>
+                            </div>
+                            <div class="col-md-9">
+                                <a href="/free-nodes/2024-7-19-node-share-links.htm" class="xcblog-blog-url">
+                                    <h3 class="xcblog-blog-title">
+                                        「7月19日」最高速度22.9M/S，2024年Netch每天更新免费节点订阅链接                                    </h3>
+                                </a>
+                                <p class="lead">这一次的节点更新覆盖了新加坡、美国、加拿大、日本、欧洲、香港、韩国等地区,最高速度可达22.9 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
+                            </div>
+                        </div>
+                        
+                        <ul class="pagination"><li><a href="/free-nodes/page-16.htm">&laquo;</a></li> <li><a href="/free-nodes/">1</a></li><li><a href="/free-nodes/page-2.htm">2</a></li><li class="disabled"><span>...</span></li><li><a href="/free-nodes/page-9.htm">9</a></li><li><a href="/free-nodes/page-10.htm">10</a></li><li><a href="/free-nodes/page-11.htm">11</a></li><li><a href="/free-nodes/page-12.htm">12</a></li><li><a href="/free-nodes/page-13.htm">13</a></li><li><a href="/free-nodes/page-14.htm">14</a></li><li><a href="/free-nodes/page-15.htm">15</a></li><li><a href="/free-nodes/page-16.htm">16</a></li><li class="active"><span>17</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                    </div>
+                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -106,16 +118,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-27760.htm" title="成都宠物领养中心领养收费吗多少钱一个月（成都宠物领养机构）">成都宠物领养中心领养收费吗多少钱一个月（成都宠物领养机构）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-19-loon-node.htm" title="「9月19日」最高速度18.7M/S，2024年Loon每天更新免费节点订阅链接">「9月19日」最高速度18.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-25-loon-node-share.htm" title="「12月25日」最高速度18.4M/S，2024年Loon每天更新免费节点订阅链接">「12月25日」最高速度18.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-29603.htm" title="动物防疫站打疫苗多少钱啊一针（动物防疫***收费吗）">动物防疫站打疫苗多少钱啊一针（动物防疫***收费吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-12-loon-github.htm" title="「8月12日」最高速度21.9M/S，2024年Loon每天更新免费节点订阅链接">「8月12日」最高速度21.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-11-latest-loon-node.htm" title="「8月11日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接">「8月11日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-13-node-share.htm" title="「8月13日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「8月13日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-7-loon-github.htm" title="「12月7日」最高速度19.5M/S，2024年Loon每天更新免费节点订阅链接">「12月7日」最高速度19.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-loon-node-share.htm" title="「11月9日」最高速度20.6M/S，2024年Loon每天更新免费节点订阅链接">「11月9日」最高速度20.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20832.htm" title="狗狗领养协议模板下载安装（领养狗狗签协议）">狗狗领养协议模板下载安装（领养狗狗签协议）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-10-latest-loon-node.htm" title="「9月10日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「9月10日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/news/article-19909.htm" title="动物疫苗需要冷藏吗多久（动物疫苗保质期多久）">动物疫苗需要冷藏吗多久（动物疫苗保质期多久）</a></li>
-                        <li class="py-2"><a href="/news/article-21290.htm" title="广州宠物领养平台官网地址查询（广州宠物领养平台官网地址查询下载）">广州宠物领养平台官网地址查询（广州宠物领养平台官网地址查询下载）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-loon-node-share.htm" title="「10月9日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接">「10月9日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24259.htm" title="PHP重载">PHP重载</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-latest-loon-node.htm" title="「12月6日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接">「12月6日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-27-linux-loon-github.htm" title="「8月27日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接">「8月27日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26372.htm" title="动物医院名称大全图片英文（动物的医院叫什么名字）">动物医院名称大全图片英文（动物的医院叫什么名字）</a></li>
+                        <li class="py-2"><a href="/news/article-26369.htm" title="狗粮颗粒机成型原理图（狗粮颗粒机成型原理图片）">狗粮颗粒机成型原理图（狗粮颗粒机成型原理图片）</a></li>
                     </ul>
     </div>
 </div>
