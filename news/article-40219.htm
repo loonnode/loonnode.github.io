@@ -2,14 +2,13 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://loonnode.github.io" />
+        <link rel="canonical" href="https://loonnode.github.io/news/article-40219.htm" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>2024-12归档 - 第9页 - Loon Node机场订阅官网</title>
-        <meta name="keywords" content="2024-12归档Loon Node机场订阅官网" />
-        <meta name="description" content="2024-12归档，当前是第9页" />
+    <title>tf.train.latest_checkpoint()报错，路径错误</title>
+        <meta name="description" content="最近使用这个tf.train.latest_checkpoint()的时候出现了问题。这里记一下。 这部分的代码如下，主要就是用了tf.train.latest_checkpoint()来寻找最新训练" />
         <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +41,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
         <!-- header-section-->
     <div class="header-wrapper">
         <div class="container-fluid">
@@ -78,9 +77,9 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div data-aos="fade-up" class="page-caption">
-                        <h1 class="page-title">2024-12 归档</h1>
+                        <h1 class="page-title">tf.train.latest_checkpoint()报错，路径错误</h1>
                         <div class="nav-box">
-                            <a href="/">首页</a> / <span>2024-12 归档</span>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
                         </div>
                     </div>
                 </div>
@@ -88,63 +87,17 @@
         </div>
     </div>
     <!-- /.page-header-->
-        <!-- attorney-section -->
+    <!-- attorney-section -->
     <div class="space-medium bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <div class="xcblog-blog-list">
-                                                <div class="row item xcblog-blog-item" data-date="2024-12-01">
-                            <div class="col-md-3">
-                                <div class="team-block">
-                                    <a href="/news/article-19910.htm" class="xcblog-blog-url">
-                                        <img src="/uploads/20240719/177dc2c6d9b8fc9789c1210863e1f506.webp" alt="2021年国考公务员考试报名人数和录取人数是多少（2021国考公务员报名人数统计）" class="img-fluid border">
-                                    </a>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>最近使用这个tf.train.latest_checkpoint()的时候出现了问题。这里记一下。</p> <p>这部分的代码如下，主要就是用了tf.train.latest_checkpoint()来寻找最新训练出的模型文件。</p> <pre><code class="language-python">sess=tf.Session(config=config) model=LSTMDSSM(...)  If os.path.exists(train_dir+"checkpoint"): 	model.saver.restore(sess,tf.train.latest_checkpoint(train_dir)) else:     print("Can't find the checkpoint going to stop")</code></pre> <p>出错的原因是：我是先在一个有gpu的机器上训练模型，后面又把训练出的模型挪到另外一台机器上执行推理。</p> <p>我原先以为这个函数是会在存放模型的地方进行查询，按照文件时间或者名字之类的找到最新的模型文件。所以我修改了存放模型的train_dir，想着这样就能正确推理了。结果报错的时候，报错信息里竟然出现了训练用机器上的路径。</p> <p>然后我去看checkpoint文件之后，发现tf.train.latest_checkpoint()函数应当是读取了这个checkpoints文件，读取里面存储的最新训练的模型文件。如果要使用这个函数，需要注意这点。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-40217.htm">JavaScript如何使用过滤器从数组中删除元素</a></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-9">
-                                <a href="/news/article-19910.htm" class="xcblog-blog-url">
-                                    <h3 class="xcblog-blog-title">
-                                        2021年国考公务员考试报名人数和录取人数是多少（2021国考公务员报名人数统计）                                    </h3>
-                                </a>
-                                <p class="lead">摘要：       本篇文章给大家谈谈2021年国考公务员考试报名人数和录取人数是多少，以及2021国考公务员报名人数统计对应的知识点，希望对各位有所帮助，不要忘了收藏本站喔。本文目录一览：1、国..</p>
-                            </div>
-                        </div>
-                                                <div class="row item xcblog-blog-item" data-date="2024-12-01">
-                            <div class="col-md-3">
-                                <div class="team-block">
-                                    <a href="/news/article-19909.htm" class="xcblog-blog-url">
-                                        <img src="/uploads/20240719/6a7b5a19da4eda1f3696d6e7f64d3fbe.webp" alt="动物疫苗需要冷藏吗多久（动物疫苗保质期多久）" class="img-fluid border">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <a href="/news/article-19909.htm" class="xcblog-blog-url">
-                                    <h3 class="xcblog-blog-title">
-                                        动物疫苗需要冷藏吗多久（动物疫苗保质期多久）                                    </h3>
-                                </a>
-                                <p class="lead">摘要：       本篇文章给大家谈谈动物疫苗需要冷藏吗多久，以及动物疫苗保质期多久对应的知识点，希望对各位有所帮助，不要忘了收藏本站喔。本文目录一览：1、猫咪疫苗放在冷藏可以吗...        </p>
-                            </div>
-                        </div>
-                                                <div class="row item xcblog-blog-item" data-date="2024-12-01">
-                            <div class="col-md-3">
-                                <div class="team-block">
-                                    <a href="/free-nodes/2024-12-1-today-loon-node.htm" class="xcblog-blog-url">
-                                        <img src="/uploads/20240719/05dc5734383533c10e6e50d869a607b9.webp" alt="「12月1日」最高速度21.5M/S，2024年Loon每天更新免费节点订阅链接" class="img-fluid border">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <a href="/free-nodes/2024-12-1-today-loon-node.htm" class="xcblog-blog-url">
-                                    <h3 class="xcblog-blog-title">
-                                        「12月1日」最高速度21.5M/S，2024年Loon每天更新免费节点订阅链接                                    </h3>
-                                </a>
-                                <p class="lead">这一次的节点更新覆盖了新加坡、欧洲、美国、香港、加拿大、日本、韩国等地区,最高速度可达21.5 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                            </div>
-                        </div>
-                        
-                        <ul class="pagination"><li><a href="/date/2024-12/page-9.htm">&laquo;</a></li> <li><a href="/date/2024-12/">1</a></li><li><a href="/date/2024-12/page-2.htm">2</a></li><li><a href="/date/2024-12/page-3.htm">3</a></li><li><a href="/date/2024-12/page-4.htm">4</a></li><li><a href="/date/2024-12/page-5.htm">5</a></li><li><a href="/date/2024-12/page-6.htm">6</a></li><li><a href="/date/2024-12/page-7.htm">7</a></li><li><a href="/date/2024-12/page-8.htm">8</a></li><li><a href="/date/2024-12/page-9.htm">9</a></li><li class="active"><span>10</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                    </div>
-                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -152,16 +105,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-20374.htm" title="宠物粮食品牌前十名排行榜有哪些品种的狗（宠物粮种类）">宠物粮食品牌前十名排行榜有哪些品种的狗（宠物粮种类）</a></li>
-                        <li class="py-2"><a href="/news/article-20831.htm" title="包含拼多多无货源网店怎么开发票的词条">包含拼多多无货源网店怎么开发票的词条</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-high-speed-nodes.htm" title="「12月14日」最高速度20.5M/S，2024年Loon每天更新免费节点订阅链接">「12月14日」最高速度20.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-37715.htm" title="Python3利用Qt5实现简易的五子棋游戏_python">Python3利用Qt5实现简易的五子棋游戏_python</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="「10月15日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接">「10月15日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-12-linux-loon-github.htm" title="「1月12日」每天更新20.9M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接">「1月12日」每天更新20.9M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-26838.htm" title="2022年公务员国考考试报名（2022年国考公务员考试报名入口）">2022年公务员国考考试报名（2022年国考公务员考试报名入口）</a></li>
-                        <li class="py-2"><a href="/news/article-27759.htm" title="猫咪三针疫苗打完还要***什么意思（猫猫三针疫苗打完后要过多久再打）">猫咪三针疫苗打完还要***什么意思（猫猫三针疫苗打完后要过多久再打）</a></li>
-                        <li class="py-2"><a href="/news/article-31410.htm" title="狗粮品牌排行 狗粮品牌排行榜">狗粮品牌排行 狗粮品牌排行榜</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-13-loon-github.htm" title="「1月13日」每天更新19.4M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接">「1月13日」每天更新19.4M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-node-subscribe.htm" title="「11月24日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接">「11月24日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-loon-node-share.htm" title="「10月9日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接">「10月9日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18779.htm" title="动物疫苗生产厂家排名榜单图片高清（动物疫苗上市公司排名）">动物疫苗生产厂家排名榜单图片高清（动物疫苗上市公司排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-today-loon-node.htm" title="「11月12日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接">「11月12日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-3-loon-node-share.htm" title="「1月3日」最高速度20.5M/S，2025年Loon每天更新免费节点订阅链接">「1月3日」最高速度20.5M/S，2025年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-loon-node.htm" title="「12月10日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接">「12月10日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29603.htm" title="动物防疫站打疫苗多少钱啊一针（动物防疫***收费吗）">动物防疫站打疫苗多少钱啊一针（动物防疫***收费吗）</a></li>
+                        <li class="py-2"><a href="/news/article-31992.htm" title="南京领养宠物的地方在哪里啊多少钱（南京领养宠物的地方在哪里啊多少钱一个月）">南京领养宠物的地方在哪里啊多少钱（南京领养宠物的地方在哪里啊多少钱一个月）</a></li>
+                        <li class="py-2"><a href="/news/article-23576.htm" title="eslint在vue中如何使用">eslint在vue中如何使用</a></li>
+                        <li class="py-2"><a href="/news/article-24260.htm" title="疫苗瓶回收处理（疫苗空瓶回收登记表）">疫苗瓶回收处理（疫苗空瓶回收登记表）</a></li>
                     </ul>
     </div>
 </div>
