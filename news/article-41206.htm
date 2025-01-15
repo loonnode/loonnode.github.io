@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-41206.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>MySQL 5.7的Homebrew安装 &#8211; MacOS</title>
+        <meta name="description" content="写在前面：博主是一只经过实战开发历练后投身培训事业的“小山猪”，昵称取自动画片《狮子王》中的“彭彭”，总是以乐观、积极的心态对待周边的事物。本人的技术路线从Java全栈工程师一路奔向大数据开发、数据挖" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                                        <a href="/">Loon Node</a>
+                                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">MySQL 5.7的Homebrew安装 &#8211; MacOS</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atelier-sulphurpool-light"> <blockquote> <p>写在前面：博主是一只经过实战开发历练后投身培训事业的“小山猪”，昵称取自动画片《狮子王》中的“彭彭”，总是以乐观、积极的心态对待周边的事物。本人的技术路线从Java全栈工程师一路奔向大数据开发、数据挖掘领域，如今终有小成，愿将昔日所获与大家交流一二，希望对学习路上的你有所助益。同时，博主也想通过此次尝试打造一个完善的技术图书馆，任何与文章技术点有关的异常、错误、注意事项均会在末尾列出，欢迎大家通过各种方式提供素材。</p> </blockquote> <ul> <li>对于文章中出现的任何错误请大家批评指出，一定及时修改。</li> <li>有任何想要讨论和学习的问题可联系我：zhuyc@vip.163.com。</li> <li>发布文章的风格因专栏而异，均自成体系，不足之处请大家指正。</li> </ul> </h1> <p><strong>本文关键字：MySQL、数据库、5.7版本、MacOS、Homebrew</strong></p> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#MySQL_57Homebrew__MacOS_6" rel="nofollow">MySQL 5.7的Homebrew安装 - MacOS</a></li> <li> <ul> <li><a href="#MySQL_9" rel="nofollow">一、MySQL简介</a></li> <li><a href="#_13" rel="nofollow">二、版本选择</a></li> <li> <ul> <li><a href="#1__14" rel="nofollow">1. 应用场景</a></li> <li><a href="#2_MySQL_23" rel="nofollow">2. MySQL版本</a></li> </ul> </li> <li><a href="#_28" rel="nofollow">三、安装步骤</a></li> <li> <ul> <li><a href="#1__30" rel="nofollow">1. 查询软件信息</a></li> <li><a href="#2__37" rel="nofollow">2. 执行安装命令</a></li> <li><a href="#3__44" rel="nofollow">3. 检查服务状态</a></li> <li><a href="#4__54" rel="nofollow">4. 初始化配置</a></li> <li><a href="#5__81" rel="nofollow">5. 终端登陆测试</a></li> <li><a href="#6__91" rel="nofollow">6. 连接工具测试</a></li> </ul> </li> </ul> </li> </ul> </div> <h2><a id="MySQL_9" rel="nofollow"></a>一、MySQL简介</h2> <p>MySQL是一个典型的关系数据库，目前是Oracle公司产品之一，也是目前主流使用的关系型数据库之一。使用MySQL可以进行最基本的数据存储、管理、查询等操作，也可以方便的组建数据库集群，配置读写分离。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/4e70dc56bfb5a262218251e7b5ba5e1b.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> MySQL数据库同样使用SQL（结构化查询语言）来进行操作，同时MySQL数据库自身也有很多可以直接使用的内置函数，在部分操作的语法上和其他数据库会存在区别。</p> <h2><a id="_13" rel="nofollow"></a>二、版本选择</h2> <h3><a id="1__14" rel="nofollow"></a>1. 应用场景</h3> <ul> <li>社区版</li> </ul> <p>在学习阶段，可以使用免费的社区版，这也是中小型企业会选用的一个版本，可以在官方网站直接进行下载。在社区版中，除了提供数据库服务端以外，同样提供了社区版相关组件，如官方的可视化工具、MySQL集群、各开发语言数据库驱动等，可以根据需要直接下载。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/ffd7d9db3f701a624e19314de0860f7e.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"></p> <ul> <li>企业版</li> </ul> <p>MySQL企业版是提供了商用的解决方案，相关的产品除了数据库服务外，还包括：MySQL云服务、企业级数据备份、企业级防火墙、企业级数据加密等。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/1f6107b7c435596347eab7b43ae4d649.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"></p> <h3><a id="2_MySQL_23" rel="nofollow"></a>2. MySQL版本</h3> <p>目前MySQL官网主要提供了两个大版本的支持：5.7.x、8.0.x，但是从5.0.x至今的版本依然可以全部下载到。至于说为什么直接从5.x跳到8.x笔者不得而知，但是从官网透露出的信息可以知道8.x版本相较于5.7版本，在性能方面做出了较大的改进和优化：2x Faster than MySQL 5.7!<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/d0833cab126c8fbaf881e9b2b0723750.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 但是笔者要在这里提醒大家的是，在8.0的MySQL数据库中，对某些常用语法的细节部分也做了调整，<strong>如果准备进行升级，一定要注意兼容性的问题</strong>。<br /> 而5.7版本相较于5.6版本而言，主要是进行了性能上的优化，并提供了更丰富的设置。如：新增了优化器、原生JSON支持、GIS扩展等。</p> <h2><a id="_28" rel="nofollow"></a>三、安装步骤</h2> <p>使用Homebrew进行MySQL数据库的安装需要MacOS系统中已经安装了相关环境，这部分可以参考：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://sandtower.blog.csdn.net/article/details/123279213"  rel="nofollow">MacOS安装Homebrew与Oh-My-Zsh</a>，完成后打开终端继续以下操作。</p> <h3><a id="1__30" rel="nofollow"></a>1. 查询软件信息</h3> <p>首先使用<strong>search</strong>命令搜索MySQL数据库完整名称：</p> <pre><code class="prism language-shell">brew search mysql</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/7f5a353c38a9630b2812adee84da59b1.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 可以看到5.7版本的MySQL数据库完整名称是<strong>mysql@5.7</strong>。</p> <h3><a id="2__37" rel="nofollow"></a>2. 执行安装命令</h3> <p>使用<strong>install</strong>命令进行软件安装：</p> <pre><code class="prism language-shell">brew<span class="token function">install</span> mysql@5.7</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/65e97eebf29d37be6afeb1e4af9843fe.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 安装过程不需要其它操作，等待安装完成即可。</p> <h3><a id="3__44" rel="nofollow"></a>3. 检查服务状态</h3> <p>第一次安装MySQL，服务是未开启状态，使用<strong>services</strong>命令进行检查：</p> <pre><code class="prism language-shell">brew services list</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/3e16eb9eb3d3c4460258ea5c5b85b48d.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 使用<strong>start</strong>指令开启服务，执行后每次开机都会自动启动该服务：</p> <pre><code class="prism language-shell">brew services start mysql@5.7</code></pre> <h3><a id="4__54" rel="nofollow"></a>4. 初始化配置</h3> <p>安装完成后需要执行一次配置才能够正常使用，执行如下命令：</p> <pre><code class="prism language-shell">mysql_secure_installation</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/9a2371b75d8c6e9e98b057473aa78150.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 如果是个人使用，这里可以<strong>不开启密码校验插件</strong>，这样我们可以使用较为简单的密码组合，方便记忆，因此输入<strong>n</strong>。</p> <ul> <li>设置密码</li> </ul> <p>为数据库的root用户（最高权限用户）设置密码，需要输入两次，输入时没有光标显示，是正常的。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/6f7274e2207de2b3868dfc30d6145ac4.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"></p> <ul> <li>选择是否移除用户</li> </ul> <p>这一步可以将不需要的匿名用户移除，输入<strong>y</strong>回车即可。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/34a82daa216a3dc353f0f50f2dcf0954.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"></p> <ul> <li>开启root用户远程连接</li> </ul> <p>默认给出的选项是不允许通过root用户远程连接，因为root用户拥有最高权限，学习阶段可以开启方便虚拟机或局域网调试（如果开启需要输入<strong>n</strong>）。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/2aa2475e1ab5557072552a8614677813.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"></p> <ul> <li>选择是否保留测试数据集</li> </ul> <p>安装是默认附带一个<strong>test</strong>数据集，这里可以根据需要选择是否保留（如果需要移除则输入<strong>y</strong>）。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/611d1909ab3fe668cdf9d990c6b8b602.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"></p> <ul> <li>立即刷新权限</li> </ul> <p>输入<strong>y</strong>使得密码和权限设置立即生效，否则需要重新启动数据库服务。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/1fee9cc8fa1d40a32c337c6469760d84.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"></p> <h3><a id="5__81" rel="nofollow"></a>5. 终端登陆测试</h3> <p>使用刚刚设置的密码测试登陆：</p> <pre><code class="prism language-shell">mysql -uroot -p</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/1868656a512a8e1da9d1f79cc5b0f339.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 也可以在命令中使用明文密码直接登陆，如（密码为root）：</p> <pre><code class="prism language-shell">mysql -uroot -proot</code></pre> <h3><a id="6__91" rel="nofollow"></a>6. 连接工具测试</h3> <p>以Navicat为例，首先新建一个连接：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/4de341fb1e7dc0ecfee073fe0dd3744c.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 填写连接名和密码创建一个新的连接：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/3eeeb4485728f4744c9e330e9eafea90.jpg" alt="MySQL 5.7的Homebrew安装 - MacOS"><br /> 对于Navicat的基本功能介绍可以参考：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://sandtower.blog.csdn.net/article/details/105821598"  rel="nofollow">MySQL数据库界面化工具 - Navicat的常用功能</a>。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-40721.htm">宠物美容师底薪一般多少钱一个月（宠物美容师基本工资）</a></p>
+                                        <p>下一个：<a href="/news/article-41207.htm">css文本垂直居中详解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-41207.htm" title="css文本垂直居中详解">css文本垂直居中详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-today-loon-node.htm" title="「1月4日」最高速度23M/S，2025年Loon每天更新免费节点订阅链接">「1月4日」最高速度23M/S，2025年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-linux-loon-github.htm" title="「1月12日」每天更新20.9M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接">「1月12日」每天更新20.9M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-loon-node-github.htm" title="「12月22日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「12月22日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-linux-loon-github.htm" title="「12月26日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「12月26日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27760.htm" title="成都宠物领养中心领养收费吗多少钱一个月（成都宠物领养机构）">成都宠物领养中心领养收费吗多少钱一个月（成都宠物领养机构）</a></li>
+                        <li class="py-2"><a href="/news/article-19457.htm" title="我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）">我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）</a></li>
+                        <li class="py-2"><a href="/news/article-40721.htm" title="宠物美容师底薪一般多少钱一个月（宠物美容师基本工资）">宠物美容师底薪一般多少钱一个月（宠物美容师基本工资）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-loon-node-share.htm" title="「12月11日」最高速度18.8M/S，2024年Loon每天更新免费节点订阅链接">「12月11日」最高速度18.8M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-loon-node.htm" title="「12月16日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接">「12月16日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
