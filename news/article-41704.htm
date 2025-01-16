@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-41704.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Vue.Draggable 文档总结</title>
+        <meta name="description" content="Draggable为基于Sortable.js的vue组件，用以实现拖拽功能。 特性  支持触摸设备 支持拖拽和选择文本 支持智能滚动 支持不同列表之间的拖拽 不以jQuery为基础 和视图模型同步刷" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                                        <a href="/">Loon Node</a>
+                                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">Vue.Draggable 文档总结</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>Draggable为基于Sortable.js的vue组件，用以实现拖拽功能。</p> <h2 id="特性">特性</h2> <ul> <li>支持触摸设备</li> <li>支持拖拽和选择文本</li> <li>支持智能滚动</li> <li>支持不同列表之间的拖拽</li> <li>不以jQuery为基础</li> <li>和视图模型同步刷新</li> <li>和vue2的国度动画兼容</li> <li>支持撤销操作</li> <li>当需要完全控制时，可以抛出所有变化</li> <li>可以和现有的UI组件兼容</li> </ul> <h2 id="安装">安装</h2> <pre class="prettyprint"><code class="hljs cmake">npm <span class="hljs-keyword">install</span> vuedraggable</code></pre> <h2 id="引入">引入</h2> <pre class="prettyprint"><code class="language-js hljs">import draggable from <span class="hljs-string">'vuedraggable'</span></code></pre> <h2 id="基础用法">基础用法</h2> <p>定义一个json串 <code>list</code>，实现它的拖拽排序。</p> <pre class="prettyprint"><code class="language-html hljs"><span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>   <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>     <span class="hljs-comment">&lt;!-- 调用组件  --&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">draggable</span> <span class="hljs-attribute">element</span>=<span class="hljs-value">"ul"</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">"list"</span>&gt;</span>       <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">v-for</span>=<span class="hljs-value">"item in list"</span>&gt;</span>{<!-- -->{item.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>     <span class="hljs-tag">&lt;/<span class="hljs-title">draggable</span>&gt;</span>     <span class="hljs-comment">&lt;!-- 输出list数据 --&gt;</span>     {<!-- -->{list}}   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript"> <span class="hljs-comment">// 引入拖拽组件</span> import draggable from <span class="hljs-string">'vuedraggable'</span> export <span class="hljs-keyword">default</span> {   name: <span class="hljs-string">'demo'</span>,   components: {     <span class="hljs-comment">//调用组件</span>     draggable,   },   data () {     <span class="hljs-keyword">return</span> {       list:[         {           id: <span class="hljs-number">1</span>,           name: <span class="hljs-string">'a'</span>         },         {           id: <span class="hljs-number">2</span>,           name: <span class="hljs-string">'b'</span>         },         {           id: <span class="hljs-number">3</span>,           name: <span class="hljs-string">'c'</span>         },         {           id: <span class="hljs-number">4</span>,           name: <span class="hljs-string">'d'</span>         },         {           id: <span class="hljs-number">5</span>,           name: <span class="hljs-string">'e'</span>         },         {           id: <span class="hljs-number">6</span>,           name: <span class="hljs-string">'f'</span>         },       ]     }   }, } </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre> <h2 id="属性">属性</h2> <h3 id="value">value</h3> <p>Array，非必须，默认为null</p> <ul> <li>用于实现拖拽的list，通常和内部v-for循环的数组为同一数组。</li> <li>最好使用vuex来实现传入。</li> <li>不是直接使用，而是通过<code>v-model</code>引入。</li> </ul> <pre class="prettyprint"><code class="language-html hljs"><span class="hljs-tag">&lt;<span class="hljs-title">draggable</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">"myArray"</span>&gt;</span></code></pre> <h3 id="list">list</h3> <p>Array，非必须，默认为null</p> <ul> <li>就是<code>value</code>的替代品。</li> <li>和<code>v-model</code>不能共用</li> <li>从表现上没有看出不同</li> </ul> <h3 id="element">element</h3> <p>String，默认div</p> <ul> <li>就是<code>&lt;draggable&gt;</code>标签在渲染后展现出来的标签类型</li> <li>也是包含拖动列表和插槽的外部标签</li> <li>可以用来兼容UI组件</li> </ul> <h3 id="options">options</h3> <p>Object</p> <ul> <li>配置项</li> <li>group: string or array 分组用的，同一组的不同list可以相互拖动</li> <li>sort: boolean 定义是否可以拖拽</li> <li>delay:number 定义鼠标选中列表单元可以开始拖动的延迟时间</li> <li>touchStartThreshold:number (不清楚)</li> <li>disabled: boolean 定义是否此sortable对象是否可用，为true时sortable对象不能拖放排序等功能</li> <li>store:</li> <li>animation: umber 单位:ms 动画时间</li> <li>handle: selector 格式为简单css选择器的字符串，使列表单元中符合选择器的元素成为拖动的手柄，只有按住拖动手柄才能使列表单元进行拖动</li> <li>filter: selector 格式为简单css选择器的字符串，定义哪些列表单元不能进行拖放，可设置为多个选择器，中间用“，”分隔</li> <li>preventOnFilter: 当拖动<code>filter</code>时是否触发<code>event.preventDefault()</code>默认触发</li> <li>draggable: selector 格式为简单css选择器的字符串，定义哪些列表单元可以进行拖放</li> <li>ghostClass: selector 格式为简单css选择器的字符串，当拖动列表单元时会生成一个副本作为影子单元来模拟被拖动单元排序的情况，此配置项就是来给这个影子单元添加一个class，我们可以通过这种方式来给影子元素进行编辑样式</li> <li>chosenClass: selector 格式为简单css选择器的字符串，目标被选中时添加</li> <li>dragClass:selector 格式为简单css选择器的字符串，目标拖动过程中添加</li> <li>forceFallback: boolean 如果设置为true时，将不使用原生的html5的拖放，可以修改一些拖放中元素的样式等</li> <li>fallbackClass： string 当forceFallback设置为true时，拖放过程中鼠标附着单元的样式</li> <li>dataIdAttr： <code>data-id</code> </li> <li>scroll：boolean当排序的容器是个可滚动的区域，拖放可以引起区域滚动</li> <li>scrollFn：function(offsetX, offsetY, originalEvent, touchEvt, hoverTargetEl) { … } 用于自定义滚动条的适配</li> <li>scrollSensitivity: number 就是鼠标靠近边缘多远开始滚动默认30</li> <li>scrollSpeed: number 滚动速度</li> </ul> <p>函数配置</p> <ul> <li>setData: 设置值时的回调函数</li> <li>onChoose: 选择单元时的回调函数</li> <li>onStart: 开始拖动时的回调函数</li> <li>onEnd: 拖动结束时的回调函数</li> <li>onAdd: 添加单元时的回调函数</li> <li>onUpdate: 排序发生变化时的回调函数</li> <li>onRemove: 单元被移动到另一个列表时的回调函数</li> <li>onFilter: 尝试选择一个被filter过滤的单元的回调函数</li> <li>onMove: 移动单元时的回调函数</li> <li>onClone: clone时的回调函数</li> <li>以上函数对象的属性：  <ul> <li>to: 移动到的列表的容器</li> <li>from：来源列表容器</li> <li>item: 被移动的单元</li> <li>clone: 副本的单元</li> <li>oldIndex：移动前的序号</li> <li>newIndex：移动后的序号</li> </ul> </li> </ul> <h3 id="clone">clone</h3> <p>function,默认值: 无处理</p> <ul> <li>这一项要配合着<code>options</code>的<code>group</code>项的<code>pull</code>项处理，当<code>pull:'clone</code>时的拖拽的回调函数’</li> <li>就是克隆的意思。</li> <li>可以理解为正常的拖拽变成了复制。</li> <li>当为<code>true</code>时克隆</li> </ul> <h3 id="move">move</h3> <p>function,默认值:null</p> <ul> <li>就是拖拽项时调用的函数</li> <li>用来确定拖拽是否生效</li> <li>返回null时可以生效</li> <li>可以通过函数判断</li> <li>有一个参数:<code>evt</code>  <ul> <li> <code>evt</code>为object</li> <li>draggedContext: 被拖拽元素的上下文  <ul> <li>index:拖拽元素的指针</li> <li>element: 拖拽数据本身</li> <li>futureIndex: 拖动后的index</li> </ul> </li> <li>relatedContext: 拖入区域的上下文  <ul> <li>index: 目标元素的index</li> <li>element:目标数据本身</li> <li>list: 拖入的列表</li> <li>component:目标组件</li> </ul> </li> </ul> </li> </ul> <pre class="prettyprint"><code class="language-html hljs"><span class="hljs-tag">&lt;<span class="hljs-title">draggable</span> <span class="hljs-attribute">element</span>=<span class="hljs-value">"ul"</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">"list"</span> <span class="hljs-attribute">:move</span>=<span class="hljs-value">'allow'</span>&gt;</span> ... methods: {   allow(evt) {     console.log(evt.draggedContext.index)     console.log(evt.draggedContext.element)     console.log(evt.draggedContext.futureIndex)     console.log(evt.relatedContext.index)     console.log(evt.relatedContext.element)     console.log(evt.relatedContext.list)     console.log(evt.relatedContext.component)     return (evt.draggedContext.element.name!== 'b')   } }</code></pre> <h3 id="componentdata">componentData</h3> <p>Object,默认值:null</p> <ul> <li>用来结合UI组件的，可以理解为代理了UI组件的定制信息</li> <li>包含两项:<code>props</code>和<code>on</code>  <ul> <li> <code>props</code>用来代理UI组件需要绑定的属性（:）</li> <li> <code>on</code>用来代理UI组件需要绑定的事件（@）</li> </ul> </li> </ul> <pre class="prettyprint"><code class="language-html hljs"><span class="hljs-tag">&lt;<span class="hljs-title">draggable</span> <span class="hljs-attribute">element</span>=<span class="hljs-value">"el-collapse"</span> <span class="hljs-attribute">:list</span>=<span class="hljs-value">"list"</span> <span class="hljs-attribute">:component-data</span>=<span class="hljs-value">"getComponentData()"</span>&gt;</span>   <span class="hljs-tag">&lt;<span class="hljs-title">el-collapse-item</span> <span class="hljs-attribute">v-for</span>=<span class="hljs-value">"e in list"</span> <span class="hljs-attribute">:title</span>=<span class="hljs-value">"e.title"</span> <span class="hljs-attribute">:name</span>=<span class="hljs-value">"e.name"</span> <span class="hljs-attribute">:key</span>=<span class="hljs-value">"e.name"</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>{<!-- -->{e.description}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-title">el-collapse-item</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">draggable</span>&gt;</span></code></pre> <pre class="prettyprint"><code class="language-js hljs">methods: {   handleChange() {     console.log(<span class="hljs-string">'changed'</span>);   },   inputChanged(value) {     <span class="hljs-keyword">this</span>.activeNames = value;   },   getComponentData() {     <span class="hljs-keyword">return</span> {       on: {         change: <span class="hljs-keyword">this</span>.handleChange,         input: <span class="hljs-keyword">this</span>.inputChanged       },       props: {         value: <span class="hljs-keyword">this</span>.activeNames       }     };   } }</code></pre> <h2 id="事件">事件</h2> <p>有以下几种</p> <pre class="prettyprint"><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">start</span>, <span class="hljs-keyword">add</span>, remove, <span class="hljs-keyword">update</span>, <span class="hljs-keyword">end</span>, choose, sort, filter, clone</span></code></pre> <p>参数带有如下属性：</p> <ul> <li>add: 包含被添加到列表的元素  <ul> <li>newIndex: 添加后的新索引</li> <li>element: 被添加的元素</li> </ul> </li> <li>removed: 从列表中移除的元素  <ul> <li>oldIndex: 移除前的索引</li> <li>element: 被移除的元素</li> </ul> </li> <li>moved：内部移动的  <ul> <li>newIndex: 改变后的索引</li> <li>oldIndex: 改变前的索引</li> <li>element: 被移动的元素</li> </ul> </li> </ul> <h2 id="插槽">插槽</h2> <p>提供一个footer插槽，在排序列表之下。 <br /> 永远位于最下方。</p> <pre class="prettyprint"><code class="language-html hljs"><span class="hljs-tag">&lt;<span class="hljs-title">draggable</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">"myArray"</span> <span class="hljs-attribute">:options</span>=<span class="hljs-value">"{draggable:'.item'}"</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">v-for</span>=<span class="hljs-value">"element in myArray"</span> <span class="hljs-attribute">:key</span>=<span class="hljs-value">"element.id"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item"</span>&gt;</span>         {<!-- -->{element.name}}     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">slot</span>=<span class="hljs-value">"footer"</span> @<span class="hljs-attribute">click</span>=<span class="hljs-value">"addPeople"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">draggable</span>&gt;</span></code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-41207.htm">css文本垂直居中详解</a></p>
+                                        <p>下一个：<a href="/news/article-41705.htm">宠物粮加工厂和帐篷加工厂哪个赚钱快（宠物粮食加工厂挣钱吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-31992.htm" title="南京领养宠物的地方在哪里啊多少钱（南京领养宠物的地方在哪里啊多少钱一个月）">南京领养宠物的地方在哪里啊多少钱（南京领养宠物的地方在哪里啊多少钱一个月）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-13-free-subscribe-node.htm" title="「10月13日」最高速度19.1M/S，2024年Loon每天更新免费节点订阅链接">「10月13日」最高速度19.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-node-subscribe.htm" title="「1月5日」每天更新23M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接">「1月5日」每天更新23M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-loon-node.htm" title="「1月9日」每天更新18.9M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接">「1月9日」每天更新18.9M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-free-subscribe-node.htm" title="「10月24日」最高速度22M/S，2024年Loon每天更新免费节点订阅链接">「10月24日」最高速度22M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32949.htm" title="太原有没有领养猫的地方（太原有没有领养猫的地方啊）">太原有没有领养猫的地方（太原有没有领养猫的地方啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-11-today-loon-node.htm" title="「10月11日」最高速度21.9M/S，2024年Loon每天更新免费节点订阅链接">「10月11日」最高速度21.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-loon-node-share.htm" title="「12月9日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接">「12月9日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-high-speed-nodes.htm" title="「10月30日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「10月30日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-subscribe-node.htm" title="「12月12日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接">「12月12日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
