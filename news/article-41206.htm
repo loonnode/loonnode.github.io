@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://loonnode.github.io/news/article-41206.htm" />
@@ -10,6 +10,33 @@
     <title>MySQL 5.7的Homebrew安装 &#8211; MacOS</title>
         <meta name="description" content="写在前面：博主是一只经过实战开发历练后投身培训事业的“小山猪”，昵称取自动画片《狮子王》中的“彭彭”，总是以乐观、积极的心态对待周边的事物。本人的技术路线从Java全栈工程师一路奔向大数据开发、数据挖" />
         <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-41206.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="MySQL 5.7的Homebrew安装 &#8211; MacOS" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/aa71f4a3126e1afa666f5227db7c6e8e.webp" />
+        <meta property="og:release_date" content="2025-01-15T09:51:17" />
+    <meta property="og:updated_time" content="2025-01-15T09:51:17" />
+        <meta property="og:description" content="写在前面：博主是一只经过实战开发历练后投身培训事业的“小山猪”，昵称取自动画片《狮子王》中的“彭彭”，总是以乐观、积极的心态对待周边的事物。本人的技术路线从Java全栈工程师一路奔向大数据开发、数据挖" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MySQL 5.7的Homebrew安装 &#8211; MacOS">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
@@ -17,7 +44,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
     <!-- FontAwesome CSS -->
-    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
     <!-- OwlCarosuel CSS -->
     <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
     <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
@@ -106,16 +133,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-5-loon-node.htm" title="「11月5日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接">「11月5日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-4-today-loon-node.htm" title="「12月4日」最高速度22.5M/S，2024年Loon每天更新免费节点订阅链接">「12月4日」最高速度22.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-32472.htm" title="SpringSecurity核心功能详解">SpringSecurity核心功能详解</a></li>
-                        <li class="py-2"><a href="/news/article-26838.htm" title="2022年公务员国考考试报名（2022年国考公务员考试报名入口）">2022年公务员国考考试报名（2022年国考公务员考试报名入口）</a></li>
-                        <li class="py-2"><a href="/news/article-21705.htm" title="狗粮品牌大全排行榜最新图片（狗粮品牌有哪些品牌）">狗粮品牌大全排行榜最新图片（狗粮品牌有哪些品牌）</a></li>
-                        <li class="py-2"><a href="/news/article-22664.htm" title="动物疫苗监管部门电话号码查询（动物疫苗预防控制中心）">动物疫苗监管部门电话号码查询（动物疫苗预防控制中心）</a></li>
-                        <li class="py-2"><a href="/news/article-41207.htm" title="css文本垂直居中详解">css文本垂直居中详解</a></li>
-                        <li class="py-2"><a href="/news/article-20832.htm" title="狗狗领养协议模板下载安装（领养狗狗签协议）">狗狗领养协议模板下载安装（领养狗狗签协议）</a></li>
-                        <li class="py-2"><a href="/news/article-26369.htm" title="狗粮颗粒机成型原理图（狗粮颗粒机成型原理图片）">狗粮颗粒机成型原理图（狗粮颗粒机成型原理图片）</a></li>
-                        <li class="py-2"><a href="/news/article-24968.htm" title="宠物医院好评评语100字怎么写（宠物医院写好评题材）">宠物医院好评评语100字怎么写（宠物医院写好评题材）</a></li>
+                        <li class="py-2"><a href="/news/article-38746.htm" title="动物疫苗接种方法及注意事项有哪些内容 动物疫苗接种方法及注意事项有哪些内容呢">动物疫苗接种方法及注意事项有哪些内容 动物疫苗接种方法及注意事项有哪些内容呢</a></li>
+                        <li class="py-2"><a href="/news/article-46183.htm" title="卖宠物粮需要懂什么知识 卖宠物粮需要懂什么知识呢">卖宠物粮需要懂什么知识 卖宠物粮需要懂什么知识呢</a></li>
+                        <li class="py-2"><a href="/news/article-19910.htm" title="2021年国考公务员考试报名人数和录取人数是多少（2021国考公务员报名人数统计）">2021年国考公务员考试报名人数和录取人数是多少（2021国考公务员报名人数统计）</a></li>
+                        <li class="py-2"><a href="/news/article-35990.htm" title="springboot集成swagger报404问题">springboot集成swagger报404问题</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-loon-node.htm" title="「11月28日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接">「11月28日」最高速度21.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31043.htm" title="兽用疫苗稀释液的说明书怎么写（兽用疫苗专用稀释液成分）">兽用疫苗稀释液的说明书怎么写（兽用疫苗专用稀释液成分）</a></li>
+                        <li class="py-2"><a href="/news/article-48482.htm" title="正规宠物领养机构有哪些地方（比较正规的宠物领养平台）">正规宠物领养机构有哪些地方（比较正规的宠物领养平台）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-free-subscribe-node.htm" title="「1月17日」每天更新20.4M/S，Shadowrocket/SSR/V2ray/Clash/Loon免费节点订阅链接">「1月17日」每天更新20.4M/S，Shadowrocket/SSR/V2ray/Clash/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-linux-loon-github.htm" title="「12月26日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「12月26日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-linux-loon-github.htm" title="「11月20日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接">「11月20日」最高速度22.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -127,16 +154,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://loonnode.github.io/news/article-23576.htm" />
@@ -10,6 +10,33 @@
     <title>eslint在vue中如何使用</title>
         <meta name="description" content="eslint帮助我们检查代码的是否规范，本文使用Prettier规则（还有standardjs、airbnb等规则），如果你想用eslint默认规则或者自行定义规则，可以不下载prettier相关依赖" />
         <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-23576.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="eslint在vue中如何使用" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/4e84d8e39c8a6226980cbca75dfd7253.webp" />
+        <meta property="og:release_date" content="2024-12-09T10:28:05" />
+    <meta property="og:updated_time" content="2024-12-09T10:28:05" />
+        <meta property="og:description" content="eslint帮助我们检查代码的是否规范，本文使用Prettier规则（还有standardjs、airbnb等规则），如果你想用eslint默认规则或者自行定义规则，可以不下载prettier相关依赖" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="eslint在vue中如何使用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
@@ -17,7 +44,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
     <!-- FontAwesome CSS -->
-    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
     <!-- OwlCarosuel CSS -->
     <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
     <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
@@ -106,16 +133,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-7-24-free-loon-node.htm" title="「7月24日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接">「7月24日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20831.htm" title="包含拼多多无货源网店怎么开发票的词条">包含拼多多无货源网店怎么开发票的词条</a></li>
-                        <li class="py-2"><a href="/news/article-34384.htm" title="猫名字最旺家数字取名（猫的名字洋气招财）">猫名字最旺家数字取名（猫的名字洋气招财）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-high-speed-nodes.htm" title="「12月14日」最高速度20.5M/S，2024年Loon每天更新免费节点订阅链接">「12月14日」最高速度20.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-21288.htm" title="编译python(cpython)的源码及其用途">编译python(cpython)的源码及其用途</a></li>
-                        <li class="py-2"><a href="/news/article-31409.htm" title="开宠物店盈利吗现在多少钱（开宠物店盈利吗现在多少钱啊）">开宠物店盈利吗现在多少钱（开宠物店盈利吗现在多少钱啊）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-node-subscribe.htm" title="「11月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接">「11月1日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-node-subscribe.htm" title="「10月28日」最高速度18.5M/S，2024年Loon每天更新免费节点订阅链接">「10月28日」最高速度18.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-19-node-share-links.htm" title="「7月19日」最高速度22.9M/S，2024年Netch每天更新免费节点订阅链接">「7月19日」最高速度22.9M/S，2024年Netch每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-loon-node.htm" title="「11月2日」最高速度18.3M/S，2024年Loon每天更新免费节点订阅链接">「11月2日」最高速度18.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20373.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-latest-loon-node.htm" title="「12月21日」最高速度21M/S，2024年Loon每天更新免费节点订阅链接">「12月21日」最高速度21M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-36778.htm" title="小型狗粮加工厂现在赚钱吗 小型狗粮加工厂现在赚钱吗知乎">小型狗粮加工厂现在赚钱吗 小型狗粮加工厂现在赚钱吗知乎</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-node-share-links.htm" title="「11月15日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接">「11月15日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25434.htm" title="Spring Cloud入门-Config分布式配置中心(Hoxton版本)">Spring Cloud入门-Config分布式配置中心(Hoxton版本)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-node-subscribe-links.htm" title="「1月16日」每天更新21.6M/S，Shadowrocket/SSR/V2ray/Clash/Loon免费节点订阅链接">「1月16日」每天更新21.6M/S，Shadowrocket/SSR/V2ray/Clash/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-49134.htm" title="MySQL/InnoDB中，乐观锁、悲观锁、共享锁、排它锁、行锁、表锁、死锁概念的理解">MySQL/InnoDB中，乐观锁、悲观锁、共享锁、排它锁、行锁、表锁、死锁概念的理解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-loon-github.htm" title="「1月13日」每天更新19.4M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接">「1月13日」每天更新19.4M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-linux-loon-github.htm" title="「12月19日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接">「12月19日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-node-subscribe.htm" title="「1月5日」每天更新23M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接">「1月5日」每天更新23M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -127,25 +154,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -172,7 +190,7 @@
                                 <a href="/sitemap.xml">网站地图</a>
                             </p>
                         <p>
-                            <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
                         </p>
                     </div>
                 </div>

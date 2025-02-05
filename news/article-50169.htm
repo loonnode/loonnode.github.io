@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-50169.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JavaScript的this指向原理</title>
+        <meta name="description" content="问题的由来 学懂JavaScript语言，一个标志就是理解下面两种写法，可能有不一样的结果。 &nbsp;   var obj = {   foo: function () {}   };   var" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-50169.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="JavaScript的this指向原理" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/f0a69459fd86cfca6b62d9abc37b6e99.webp" />
+        <meta property="og:release_date" content="2025-02-02T09:28:22" />
+    <meta property="og:updated_time" content="2025-02-02T09:28:22" />
+        <meta property="og:description" content="问题的由来 学懂JavaScript语言，一个标志就是理解下面两种写法，可能有不一样的结果。 &nbsp;   var obj = {   foo: function () {}   };   var" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JavaScript的this指向原理">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                    <a href="/">
+                                        <span>Loon Node</span>
+                                        </a>
+                </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">JavaScript的this指向原理</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <h2> <a name="t0" rel="nofollow"></a>问题的由来</h2> <p>学懂JavaScript语言，一个标志就是理解下面两种写法，可能有不一样的结果。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var obj = {<!-- --></code></p> </li> <li> <p><code>foo: function () {}</code></p> </li> <li> <p><code>};</code></p> </li> <li> <p><code>var foo = obj.foo;</code></p> </li> <li> <p><code>// 写法一</code></p> </li> <li> <p><code>obj.foo()</code></p> </li> <li> <p><code>// 写法二</code></p> </li> <li> <p><code>foo()</code></p> </li> </ol> <p>上面代码中，虽然<code>obj.foo</code>和<code>foo</code>指向同一个函数，但是执行结果可能不一样。请看下面的例子。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var obj = {<!-- --></code></p> </li> <li> <p><code>foo: function () { console.log(this.bar) },</code></p> </li> <li> <p><code>bar: 1</code></p> </li> <li> <p><code>};</code></p> </li> <li> <p><code>var foo = obj.foo;</code></p> </li> <li> <p><code>var bar = 2;</code></p> </li> <li> <p><code>obj.foo() // 1</code></p> </li> <li> <p><code>foo() // 2</code></p> </li> </ol> <p>这种差异的原因，就在于函数体内部使用了<code>this</code>关键字。很多教科书会告诉你，<code>this</code>指的是函数运行时所在的环境。对于<code>obj.foo()</code>来说，<code>foo</code>运行在<code>obj</code>环境，所以<code>this</code>指向<code>obj</code>；对于<code>foo()</code>来说，<code>foo</code>运行在全局环境，所以<code>this</code>指向全局环境。所以，两者的运行结果不一样。<br /> 这种解释没错，但是教科书往往不告诉你，为什么会这样？也就是说，函数的运行环境到底是怎么决定的？举例来说，为什么<code>obj.foo()</code>就是在<code>obj</code>环境执行，而一旦<code>var foo = obj.foo</code>，<code>foo()</code>就变成在全局环境执行？<br /> 本文就来解释JavaScript这样处理的原理。理解了这一点，你就会彻底理解<code>this</code>的作用。</p> <h2> <a name="t1" rel="nofollow"></a>内存的数据结构</h2> <p>JavaScript语言之所以有<code>this</code>的设计，跟内存里面的数据结构有关系。</p> <pre class="has"><code>var obj = { foo:  5 }; </code></pre> <p>上面的代码将一个对象赋值给变量<code>obj</code>。JavaScript引擎会先在内存里面，生成一个对象<code>{ foo: 5 }</code>，然后把这个对象的内存地址赋值给变量<code>obj</code>。</p> <p><img decoding="async" alt="3534846-9f6705079bf2db98.png" class="has" src="http://img.555519.xyz/uploads/20230206/f2f88f0b12ca3be29af3699cef558874.jpg"></p> <p> 也就是说，变量<code>obj</code>是一个地址（<code>reference</code>）。后面如果要读取<code>obj.foo</code>，引擎先从<code>obj</code>拿到内存地址，然后再从该地址读出原始的对象，返回它的<code>foo</code>属性。<br /> 原始的对象以字典结构保存，每一个属性名都对应一个属性描述对象。举例来说，上面例子的<code>foo</code>属性，实际上是以下面的形式保存的。</p> <p><img decoding="async" alt="3534846-14bea7e38416f49e.png" class="has" src="http://img.555519.xyz/uploads/20230206/14ca95891973a5eb234f2f5b8b3a8d95.jpg"></p> <p>&nbsp;</p> <pre>&nbsp;</pre> <ol> <li> <p><code>{<!-- --></code></p> </li> <li> <p><code>foo: {<!-- --></code></p> </li> <li> <p><code>[[value]]: 5</code></p> </li> <li> <p><code>[[writable]]: true</code></p> </li> <li> <p><code>[[enumerable]]: true</code></p> </li> <li> <p><code>[[configurable]]: true</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>}</code></p> </li> </ol> <p>注意，<code>foo</code>属性的值保存在属性描述对象的<code>value</code>属性里面。</p> <h2> <a name="t2" rel="nofollow"></a>函数</h2> <p>这样的结构是很清晰的，问题在于属性的值可能是一个函数。</p> <pre class="has"><code>var obj = { foo: function () {} }; </code></pre> <p>这时，引擎会将函数单独保存在内存中，然后再将函数的地址赋值给<code>foo</code>属性的<code>value</code>属性。</p> <p><img decoding="async" alt="3534846-9b7605d5d9d2edd3.png" class="has" src="http://img.555519.xyz/uploads/20230206/d7b9adefc4c87ad58c438d1a90df8d4b.jpg"></p> <p>&nbsp;</p> <pre>&nbsp;</pre> <ol> <li> <p><code>{<!-- --></code></p> </li> <li> <p><code>foo: {<!-- --></code></p> </li> <li> <p><code>[[value]]: 函数的地址</code></p> </li> <li> <p><code>...</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>}</code></p> </li> </ol> <p>由于函数是一个单独的值，所以它可以在不同的环境（上下文）执行。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var f = function () {};</code></p> </li> <li> <p><code>var obj = { f: f };</code></p> </li> <li> <p><code>// 单独执行</code></p> </li> <li> <p><code>f()</code></p> </li> <li> <p><code>// obj 环境执行</code></p> </li> <li> <p><code>obj.f()</code></p> </li> </ol> <h2> <a name="t3" rel="nofollow"></a>环境变量</h2> <p>JavaScript允许在函数体内部，引用当前环境的其他变量。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var f = function () {<!-- --></code></p> </li> <li> <p><code>console.log(x);</code></p> </li> <li> <p><code>};</code></p> </li> </ol> <p>上面代码中，函数体里面使用了变量<code>x</code>。该变量由运行环境提供。<br /> 现在问题就来了，由于函数可以在不同的运行环境执行，所以需要有一种机制，能够在函数体内部获得当前的运行环境（<code>context</code>）。所以，<code>this</code>就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var f = function () {<!-- --></code></p> </li> <li> <p><code>console.log(this.x);</code></p> </li> <li> <p><code>}</code></p> </li> </ol> <p>上面代码中，函数体里面的<code>this.x</code>就是指当前运行环境的<code>x</code>。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var f = function () {<!-- --></code></p> </li> <li> <p><code>console.log(this.x);</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>var x = 1;</code></p> </li> <li> <p><code>var obj = {<!-- --></code></p> </li> <li> <p><code>f: f,</code></p> </li> <li> <p><code>x: 2,</code></p> </li> <li> <p><code>};</code></p> </li> <li> <p><code>// 单独执行</code></p> </li> <li> <p><code>f() // 1</code></p> </li> <li> <p><code>// obj 环境执行</code></p> </li> <li> <p><code>obj.f() // 2</code></p> </li> </ol> <p>上面代码中，函数<code>f</code>在全局环境执行，<code>this.x</code>指向全局环境的<code>x</code>。</p> <p><img decoding="async" alt="3534846-844a685e8241c054.png" class="has" src="http://img.555519.xyz/uploads/20230206/54ea3310537063b54c4d832d1eb32b3e.jpg"></p> <p> 在<code>obj</code>环境执行，<code>this.x</code>指向<code>obj.x</code>。</p> <p><img decoding="async" alt="3534846-cca265bb5b29213c.png" class="has" src="http://img.555519.xyz/uploads/20230206/54aa50de8469fdd67d951fe20a8ebb0e.jpg"></p> <p> 回到本文开头提出的问题，<code>obj.foo()</code>是通过<code>obj</code>找到<code>foo</code>，所以就是在<code>obj</code>环境执行。一旦<code>var foo = obj.foo</code>，变量<code>foo</code>就直接指向函数本身，所以<code>foo()</code>就变成在全局环境执行。</p> <p>&nbsp;</p> <h2> <a name="t4" rel="nofollow"></a>this使用场景</h2> <p>函数的不同使用场合，<code>this</code>有不同的值。总的来说，<code>this</code>就是函数运行时所在的环境对象。</p> <p>情况一：纯粹的函数调用</p> <p>这是函数的最通常用法，属于全局性调用，因此<code>this</code>就代表全局对象。请看下面这段代码，它的运行结果是1。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var x = 1;</code></p> </li> <li> <p><code>function test() {<!-- --></code></p> </li> <li> <p><code>console.log(this.x);</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>test(); // 1</code></p> </li> </ol> <p>情况二：作为对象方法的调用</p> <p>函数还可以作为某个对象的方法调用，这时<code>this</code>就指这个上级对象。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>function test() {<!-- --></code></p> </li> <li> <p><code>console.log(this.x);</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>var obj = {};</code></p> </li> <li> <p><code>obj.x = 1;</code></p> </li> <li> <p><code>obj.m = test;</code></p> </li> <li> <p><code>obj.m(); // 1</code></p> </li> </ol> <p>情况三：作为构造函数调用</p> <p>所谓构造函数，就是通过这个函数，可以生成一个新对象。这时，<code>this</code>就指这个新对象。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>function test() {<!-- --></code></p> </li> <li> <p><code>　this.x = 1;</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>var obj = new test();</code></p> </li> <li> <p><code>obj.x // 1</code></p> </li> </ol> <p>运行结果为1。为了表明这时<code>this</code>不是全局对象，我们对代码做一些改变：</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var x = 2;</code></p> </li> <li> <p><code>function test() {<!-- --></code></p> </li> <li> <p><code>this.x = 1;</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>var obj = new test();</code></p> </li> <li> <p><code>x // 2</code></p> </li> </ol> <p>运行结果为2，表明全局变量<code>x</code>的值根本没变。</p> <p>情况四：apply调用</p> <p><code>apply()</code>是函数的一个方法，作用是改变函数的调用对象。它的第一个参数就表示改变后的调用这个函数的对象。因此，这时<code>this</code>指的就是这第一个参数。</p> <pre>&nbsp;</pre> <ol> <li> <p><code>var x = 0;</code></p> </li> <li> <p><code>function test() {<!-- --></code></p> </li> <li> <p><code>　console.log(this.x);</code></p> </li> <li> <p><code>}</code></p> </li> <li> <p><code>var obj = {};</code></p> </li> <li> <p><code>obj.x = 1;</code></p> </li> <li> <p><code>obj.m = test;</code></p> </li> <li> <p><code>obj.m.apply() // 0</code></p> </li> </ol> <p><code>apply()</code>的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明<code>this</code>指的是全局对象。<br /> 如果把最后一行代码修改为</p> <pre class="has"><code>obj.m.apply(obj); //1 </code></pre> <p>运行结果就变成了1，证明了这时<code>this</code>代表的是对象<code>obj</code>。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49647.htm">成都哪里可以免费领养狗（成都哪里可以免费领养狗狗狗）</a></p>
+                                        <p>下一个：<a href="/news/article-50170.htm">两家商量好抱养孩子犯法吗判刑吗（抱养两个孩子）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-29897.htm" title="动物疫苗的使用方法有哪些种类的（动物疫苗知识）">动物疫苗的使用方法有哪些种类的（动物疫苗知识）</a></li>
+                        <li class="py-2"><a href="/news/article-31045.htm" title="延吉市宠物医院推荐（延吉市宠物狗）">延吉市宠物医院推荐（延吉市宠物狗）</a></li>
+                        <li class="py-2"><a href="/news/article-40219.htm" title="tf.train.latest_checkpoint()报错，路径错误">tf.train.latest_checkpoint()报错，路径错误</a></li>
+                        <li class="py-2"><a href="/news/article-31410.htm" title="狗粮品牌排行 狗粮品牌排行榜">狗粮品牌排行 狗粮品牌排行榜</a></li>
+                        <li class="py-2"><a href="/news/article-19456.htm" title="动物医院商标分类（动物医院商标分类标准）">动物医院商标分类（动物医院商标分类标准）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-loon-node.htm" title="「1月9日」每天更新18.9M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接">「1月9日」每天更新18.9M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45676.htm" title="Java 中单例模式的正确用法？">Java 中单例模式的正确用法？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-node-subscribe.htm" title="「1月21日」每天更新18.7M/S，SSR/Clash/V2ray/Shadowrocket/Loon免费节点订阅链接">「1月21日」每天更新18.7M/S，SSR/Clash/V2ray/Shadowrocket/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-50682.htm" title="宠物诊所申请动物诊疗许可证的条件是什么（宠物诊所办理流程）">宠物诊所申请动物诊疗许可证的条件是什么（宠物诊所办理流程）</a></li>
+                        <li class="py-2"><a href="/news/article-19457.htm" title="我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）">我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

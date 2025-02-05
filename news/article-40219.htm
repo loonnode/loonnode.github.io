@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://loonnode.github.io/news/article-40219.htm" />
@@ -10,6 +10,33 @@
     <title>tf.train.latest_checkpoint()报错，路径错误</title>
         <meta name="description" content="最近使用这个tf.train.latest_checkpoint()的时候出现了问题。这里记一下。 这部分的代码如下，主要就是用了tf.train.latest_checkpoint()来寻找最新训练" />
         <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-40219.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="tf.train.latest_checkpoint()报错，路径错误" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/89d83e89fd6899d38484aec51f2079a3.webp" />
+        <meta property="og:release_date" content="2025-01-13T08:18:08" />
+    <meta property="og:updated_time" content="2025-01-13T08:18:08" />
+        <meta property="og:description" content="最近使用这个tf.train.latest_checkpoint()的时候出现了问题。这里记一下。 这部分的代码如下，主要就是用了tf.train.latest_checkpoint()来寻找最新训练" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="tf.train.latest_checkpoint()报错，路径错误">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
@@ -17,7 +44,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
     <!-- FontAwesome CSS -->
-    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
     <!-- OwlCarosuel CSS -->
     <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
     <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
@@ -106,16 +133,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-40217.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
-                        <li class="py-2"><a href="/news/article-27759.htm" title="猫咪三针疫苗打完还要***什么意思（猫猫三针疫苗打完后要过多久再打）">猫咪三针疫苗打完还要***什么意思（猫猫三针疫苗打完后要过多久再打）</a></li>
-                        <li class="py-2"><a href="/news/article-32949.htm" title="太原有没有领养猫的地方（太原有没有领养猫的地方啊）">太原有没有领养猫的地方（太原有没有领养猫的地方啊）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-8-latest-loon-node.htm" title="「12月8日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接">「12月8日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-25-latest-loon-node.htm" title="「10月25日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「10月25日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="「10月15日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接">「10月15日」最高速度18.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-27300.htm" title="安安宠物医院有限公司（安安宠物医院官网）">安安宠物医院有限公司（安安宠物医院官网）</a></li>
-                        <li class="py-2"><a href="/news/article-24259.htm" title="PHP重载">PHP重载</a></li>
-                        <li class="py-2"><a href="/news/article-22206.htm" title="动物医院申请条件有哪些内容和要求呢英文（动物医院用英文怎么说）">动物医院申请条件有哪些内容和要求呢英文（动物医院用英文怎么说）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-loon-github.htm" title="「11月14日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接">「11月14日」最高速度20.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-35991.htm" title="我被猫咬了,没去打针,会怎么样吗（被猫咬了没打针会有什么症状）">我被猫咬了,没去打针,会怎么样吗（被猫咬了没打针会有什么症状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-loon-node-share.htm" title="「11月8日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接">「11月8日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24260.htm" title="疫苗瓶回收处理（疫苗空瓶回收登记表）">疫苗瓶回收处理（疫苗空瓶回收登记表）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-loon-node-share.htm" title="「12月29日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接">「12月29日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26837.htm" title="SpringBoot之自定义Starter及AutoConfiguration">SpringBoot之自定义Starter及AutoConfiguration</a></li>
+                        <li class="py-2"><a href="/news/article-48142.htm" title="C语言操作符详解">C语言操作符详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-loon-github.htm" title="「1月13日」每天更新19.4M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接">「1月13日」每天更新19.4M/S，SSR/Shadowrocket/Clash/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-node-share-links.htm" title="「11月15日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接">「11月15日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-node-subscribe-links.htm" title="「12月28日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接">「12月28日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26838.htm" title="2022年公务员国考考试报名（2022年国考公务员考试报名入口）">2022年公务员国考考试报名（2022年国考公务员考试报名入口）</a></li>
                     </ul>
     </div>
 </div>
@@ -127,16 +154,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

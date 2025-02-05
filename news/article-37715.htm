@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://loonnode.github.io/news/article-37715.htm" />
@@ -10,6 +10,33 @@
     <title>Python3利用Qt5实现简易的五子棋游戏_python</title>
         <meta name="description" content="要写出一个五子棋游戏，我们最先要解决的，就是如何下子，如何判断已经五子连珠，而不是如何绘制画面，因此我们先确定棋盘 五子棋采用15*15的棋盘，因此，我们可以使用二维列表来创建一个棋盘，不妨认为0表示" />
         <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-37715.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="Python3利用Qt5实现简易的五子棋游戏_python" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/c3430117de7f7172a94ef50ab75943e8.webp" />
+        <meta property="og:release_date" content="2025-01-08T10:02:14" />
+    <meta property="og:updated_time" content="2025-01-08T10:02:14" />
+        <meta property="og:description" content="要写出一个五子棋游戏，我们最先要解决的，就是如何下子，如何判断已经五子连珠，而不是如何绘制画面，因此我们先确定棋盘 五子棋采用15*15的棋盘，因此，我们可以使用二维列表来创建一个棋盘，不妨认为0表示" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python3利用Qt5实现简易的五子棋游戏_python">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
@@ -17,7 +44,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
     <!-- FontAwesome CSS -->
-    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
     <!-- OwlCarosuel CSS -->
     <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
     <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
@@ -106,16 +133,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-13-loon-github.htm" title="「12月13日」最高速度19M/S，2024年Loon每天更新免费节点订阅链接">「12月13日」最高速度19M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20373.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
-                        <li class="py-2"><a href="/news/article-19457.htm" title="我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）">我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-9-loon-node-share.htm" title="「10月9日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接">「10月9日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20832.htm" title="狗狗领养协议模板下载安装（领养狗狗签协议）">狗狗领养协议模板下载安装（领养狗狗签协议）</a></li>
-                        <li class="py-2"><a href="/news/article-19909.htm" title="动物疫苗需要冷藏吗多久（动物疫苗保质期多久）">动物疫苗需要冷藏吗多久（动物疫苗保质期多久）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-16-loon-node.htm" title="「12月16日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接">「12月16日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-30-latest-loon-node.htm" title="「11月30日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接">「11月30日」最高速度19.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-25905.htm" title="中国兽药十大名牌排行榜简介 中国兽药十大名牌排行榜简介图片">中国兽药十大名牌排行榜简介 中国兽药十大名牌排行榜简介图片</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-27-loon-node.htm" title="「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接">「10月27日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-loon-github.htm" title="「1月29日」每天更新18.5M/S，SSR/V2ray/Shadowrocket/Clash/Loon免费节点订阅链接">「1月29日」每天更新18.5M/S，SSR/V2ray/Shadowrocket/Clash/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-node-share.htm" title="「11月26日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接">「11月26日」最高速度19.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-50170.htm" title="两家商量好抱养孩子犯法吗判刑吗（抱养两个孩子）">两家商量好抱养孩子犯法吗判刑吗（抱养两个孩子）</a></li>
+                        <li class="py-2"><a href="/news/article-34993.htm" title="大人被小猫抓了怎么办（大人被猫抓伤了怎么办）">大人被小猫抓了怎么办（大人被猫抓伤了怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-26838.htm" title="2022年公务员国考考试报名（2022年国考公务员考试报名入口）">2022年公务员国考考试报名（2022年国考公务员考试报名入口）</a></li>
+                        <li class="py-2"><a href="/news/article-29897.htm" title="动物疫苗的使用方法有哪些种类的（动物疫苗知识）">动物疫苗的使用方法有哪些种类的（动物疫苗知识）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-free-node-subscribe.htm" title="「1月26日」每天更新19.4M/S，V2ray/Shadowrocket/Clash/SSR/Loon免费节点订阅链接">「1月26日」每天更新19.4M/S，V2ray/Shadowrocket/Clash/SSR/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-41206.htm" title="MySQL 5.7的Homebrew安装 &#8211; MacOS">MySQL 5.7的Homebrew安装 &#8211; MacOS</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-node-subscribe.htm" title="「1月5日」每天更新23M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接">「1月5日」每天更新23M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-43691.htm" title="聊城宠物用品批发市场在哪里呀（聊城宠物用品批发市场在哪里呀多少钱）">聊城宠物用品批发市场在哪里呀（聊城宠物用品批发市场在哪里呀多少钱）</a></li>
                     </ul>
     </div>
 </div>
@@ -127,16 +154,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

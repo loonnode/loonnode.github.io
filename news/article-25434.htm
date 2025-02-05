@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://loonnode.github.io/news/article-25434.htm" />
@@ -10,6 +10,33 @@
     <title>Spring Cloud入门-Config分布式配置中心(Hoxton版本)</title>
         <meta name="description" content="文章目录    Spring Cloud入门系列汇总 摘要 Spring Cloud Config 简介 在Git仓库中准备配置信息   配置仓库目录结构 master分支下的配置信息 dev分支下的" />
         <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-25434.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="Spring Cloud入门-Config分布式配置中心(Hoxton版本)" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/716e967cd5943ac4688728deae37c3b3.webp" />
+        <meta property="og:release_date" content="2024-12-13T12:05:13" />
+    <meta property="og:updated_time" content="2024-12-13T12:05:13" />
+        <meta property="og:description" content="文章目录    Spring Cloud入门系列汇总 摘要 Spring Cloud Config 简介 在Git仓库中准备配置信息   配置仓库目录结构 master分支下的配置信息 dev分支下的" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Cloud入门-Config分布式配置中心(Hoxton版本)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
     <!-- Bootstrap -->
     <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
@@ -17,7 +44,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
     <!-- FontAwesome CSS -->
-    <link href="__ADDON__/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
     <!-- OwlCarosuel CSS -->
     <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
     <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
@@ -106,16 +133,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-19-linux-loon-github.htm" title="「12月19日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接">「12月19日」最高速度21.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-19456.htm" title="动物医院商标分类（动物医院商标分类标准）">动物医院商标分类（动物医院商标分类标准）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-29-loon-node-share.htm" title="「12月29日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接">「12月29日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-25-latest-loon-node.htm" title="「10月25日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接">「10月25日」最高速度20.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-node-subscribe.htm" title="「11月18日」最高速度22.2M/S，2024年Loon每天更新免费节点订阅链接">「11月18日」最高速度22.2M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-23-loon-node-github.htm" title="「9月23日」最高速度20.6M/S，2024年Loon每天更新免费节点订阅链接">「9月23日」最高速度20.6M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-19-loon-node-share.htm" title="「10月19日」最高速度18.1M/S，2024年Loon每天更新免费节点订阅链接">「10月19日」最高速度18.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-34384.htm" title="猫名字最旺家数字取名（猫的名字洋气招财）">猫名字最旺家数字取名（猫的名字洋气招财）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-subscribe-node.htm" title="「11月19日」最高速度22.9M/S，2024年Loon每天更新免费节点订阅链接">「11月19日」最高速度22.9M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-free-high-speed-nodes.htm" title="「1月20日」每天更新20.1M/S，V2ray/SSR/Clash/Shadowrocket/Loon免费节点订阅链接">「1月20日」每天更新20.1M/S，V2ray/SSR/Clash/Shadowrocket/Loon免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/news/article-26372.htm" title="动物医院名称大全图片英文（动物的医院叫什么名字）">动物医院名称大全图片英文（动物的医院叫什么名字）</a></li>
-                        <li class="py-2"><a href="/news/article-33905.htm" title="动物疫苗分几类（动物疫苗分几类类别）">动物疫苗分几类（动物疫苗分几类类别）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-loon-node.htm" title="「12月5日」最高速度21.4M/S，2024年Loon每天更新免费节点订阅链接">「12月5日」最高速度21.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47165.htm" title="Django实现统一包装接口返回值数据格式">Django实现统一包装接口返回值数据格式</a></li>
+                        <li class="py-2"><a href="/news/article-30578.htm" title="PHP与JSON的一些常用操作">PHP与JSON的一些常用操作</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share-links.htm" title="「11月29日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接">「11月29日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47650.htm" title="动物打了疫苗了被咬还要***吗视频教学（动物打了疫苗有什么用）">动物打了疫苗了被咬还要***吗视频教学（动物打了疫苗有什么用）</a></li>
+                        <li class="py-2"><a href="/news/article-42701.htm" title="附近有没有养狗的（离我家最近的养狗场）">附近有没有养狗的（离我家最近的养狗场）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-latest-loon-node.htm" title="「11月6日」最高速度22.8M/S，2024年Loon每天更新免费节点订阅链接">「11月6日」最高速度22.8M/S，2024年Loon每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -127,25 +154,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -172,7 +190,7 @@
                                 <a href="/sitemap.xml">网站地图</a>
                             </p>
                         <p>
-                            <a href="/">Loon Node机场订阅站</a> 版权所有 Powered by WordPress
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
                         </p>
                     </div>
                 </div>
