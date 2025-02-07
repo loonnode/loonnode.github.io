@@ -989,3 +989,6 @@ caption { padding-top: .75rem; padding-bottom: .75rem; color: #55595d; text-alig
 
 .page-caption .nav-box, .page-caption .nav-box a {color: #fff;}
 .logo, .logo h1 {font-size: 2rem;font-weight: bolder;font-family: 'Montserrat', sans-serif;line-height: 1;}
+
+.xcblog-blog-list .item {margin-bottom: 1.5rem;}
+.xcblog-blog-list .item h3 {font-size: 1.3rem;}
