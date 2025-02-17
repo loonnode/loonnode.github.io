@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-57780.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Web前端：JavaScript和Nodejs有什么不同?</title>
+        <meta name="description" content="　　Javascript和Nodejs在程序员中都非常流行，但是，它们彼此完全不同，它们之间的主要区别在于这两种技术在Web应用程序开发中的应用方式。Nodejs 和 Javascript在Web开发" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-57780.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="Web前端：JavaScript和Nodejs有什么不同?" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/d48684f727d51b441a9df78f8937cb5b.webp" />
+        <meta property="og:release_date" content="2025-02-16T07:22:47" />
+    <meta property="og:updated_time" content="2025-02-16T07:22:47" />
+        <meta property="og:description" content="　　Javascript和Nodejs在程序员中都非常流行，但是，它们彼此完全不同，它们之间的主要区别在于这两种技术在Web应用程序开发中的应用方式。Nodejs 和 Javascript在Web开发" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web前端：JavaScript和Nodejs有什么不同?">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                    <a href="/">
+                                        <span>Loon Node</span>
+                                        </a>
+                </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">Web前端：JavaScript和Nodejs有什么不同?</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>　　Javascript和Nodejs在程序员中都非常流行，但是，它们彼此完全不同，它们之间的主要区别在于这两种技术在Web应用程序开发中的应用方式。Nodejs 和 Javascript在Web开发世界中有不同的用途。我们将详细讨论Javascript与Nodejs。</p> <p>　　Nodejs概述</p> <p>　　Nodejs是一个跨平台、后端、开源的JavaScript运行时环境，构建在Chrome的V8 JavaScript 引擎之上，并在Web浏览器之外执行JS代码。它是适合初学者的流行且轻量级的Web框架。</p> <p>　　通过Nodejs，我们可以在任何浏览器上使用JavaScript——前端、中间件和后端，包括Linux、macOS 和 Windows。因此，Node.js 包含在许多主要的Web开发堆栈中，包括 MERN、MEVN 和 MEAN 堆栈。</p> <p>　　JavaScript 概述</p> <p>　　JavaScript是符合ECMAScript标准的高级编程或脚本编程语言，与HTML和CSS 一起，它是万维网的基本技术之一。HTML为网页提供结构，CSS为网页提供样式，而JavaScript添加了交互组件以保持用户的参与度。</p> <p>　　JavaScript增强的网页更加动态和以用户为中心，JavaScript通过将静态网页更改为交互式网页来改善用户体验。总而言之，JavaScript为网页添加了动态功能。</p> <p>　　以下是JavaScript和Nodejs之间的主要区别：</p> <p>　　技术类型</p> <p>　　JavaScript 基本上是一种编程或脚本语言，可以在任何安装了JavaScript引擎的浏览器中运行。另一方面，Nodejs 是一个后端JavaScript运行环境。Nodejs需要可以通过JavaScript编程轻松访问的库。</p> <p class="img-center"><img fetchpriority="high" decoding="async" alt="" height="421" src="http://img.555519.xyz/uploads3/20220607/288d81c20bc3749ae486a9f9392b7c09.jpg"></p> <p style="text-align:center;"> <p>　　应用</p> <p>　　JavaScript通常用于单个网站的客户端操作。任何活动，如表单验证、在设定的时间显示动态页面或简单的Ajax请求，都使用javascript处理。</p> <p>　　另一方面，Node JS主要用于以非阻塞方式访问或执行任何操作系统。在操作系统上，非阻塞操作是涉及创建或执行shell脚本、在单个调用中检索指定的硬件相关信息、获取系统中安装的证书数据或执行大量已定义任务的操作。</p> <p>　　支持的引擎</p> <p>　　JavaScript可以在任何引擎上运行，包括 Safari的JavaScript Core、FireFox的 Spider Monkey 和Google Chrome的V8。因此，JavaScript编程的创建和执行非常简单。</p> <p>　　另一方面，Node JS只支持 Google chrome的V8引擎。但是，编写的JavaScript 代码可以在任何环境中运行，无论它是否支持V8引擎。因此，没有特定于浏览器的约束。</p> <p>　　操作系统访问</p> <p>　　独特的非阻塞任务JavaScript包括用于访问任何操作系统的多个不同对象。但是，它们都是特定于操作系统的。例如，ActiveX 控件是一个仅限Windows的应用程序。</p> <p>　　但是，Node JS能够从任何JavaScript编程中运行与操作系统相关的非阻塞任务。其中没有特定于操作系统的常量。Node JS精通创建与文件系统的特定绑定，允许开发人员读取和写入磁盘。</p> <p>　　结论</p> <p>　　这两种技术都非常流行并用于Web开发。JavaScript主要用于前端Web开发，而 Node.js 用于服务器端，然而，JavaScript 比 Nodejs 更受欢迎。发现用于处理 JavaScript 和进行一些专门开发的资源非常简单。Node JS为使用JavaScript构建高度可扩展的服务器端应用程序提供了具有事件驱动、非阻塞(异步)I/O 的跨平台运行时环境。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-57209.htm">宠物粮食加工厂加盟条件要求高吗 宠物粮食加工厂加盟条件要求高吗知乎</a></p>
+                                        <p>下一个：<a href="/news/article-57781.htm">北京动物观赏医院官网招聘电话（北京动物观赏医院官网招聘电话地址）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-51736.htm" title="云原生之Docker实战使用docker部署Jellyfin个人影音服务器">云原生之Docker实战使用docker部署Jellyfin个人影音服务器</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-subscribe-node.htm" title="「12月12日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接">「12月12日」最高速度20.3M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-54433.htm" title="动物医院需要什么手续才能开药（动物医院需要什么手续才能开药品）">动物医院需要什么手续才能开药（动物医院需要什么手续才能开药品）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-loon-node-share.htm" title="「12月11日」最高速度18.8M/S，2024年Loon每天更新免费节点订阅链接">「12月11日」最高速度18.8M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-free-high-speed-nodes.htm" title="「1月22日」每天更新20.4M/S，SSR/Clash/V2ray/Shadowrocket/Loon免费节点订阅链接">「1月22日」每天更新20.4M/S，SSR/Clash/V2ray/Shadowrocket/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-37272.htm" title="三国杀限定皮肤升动态哪个好（三国杀动态皮肤40000）">三国杀限定皮肤升动态哪个好（三国杀动态皮肤40000）</a></li>
+                        <li class="py-2"><a href="/news/article-58350.htm" title="宠物粮食生产需要什么条件呢 宠物粮食生产需要什么条件呢视频">宠物粮食生产需要什么条件呢 宠物粮食生产需要什么条件呢视频</a></li>
+                        <li class="py-2"><a href="/news/article-19457.htm" title="我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）">我被猫咬了,没去***,会不会死狂犬病（被猫咬了没打狂犬疫苗会死吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-loon-node-share.htm" title="「11月11日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接">「11月11日」最高速度19.7M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-loon-node-share.htm" title="「2月2日」每天更新18.9M/S，SSR/V2ray/Clash/Shadowrocket/Loon免费节点订阅链接">「2月2日」每天更新18.9M/S，SSR/V2ray/Clash/Shadowrocket/Loon免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
