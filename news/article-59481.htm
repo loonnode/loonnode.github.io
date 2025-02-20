@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-59481.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ScalaList集合的使用方法</title>
+        <meta name="description" content="List集合 集合中的值不能改变 会报错 而数组可以改变 因为集合是常量 1.创建List集合 val l1 = List("a","b","c")  2.打印下标集合数据 println(l1(0)" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-59481.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="ScalaList集合的使用方法" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/b9485d8d5d0cbcf11f3f5346b090ac06.webp" />
+        <meta property="og:release_date" content="2025-02-19T06:38:24" />
+    <meta property="og:updated_time" content="2025-02-19T06:38:24" />
+        <meta property="og:description" content="List集合 集合中的值不能改变 会报错 而数组可以改变 因为集合是常量 1.创建List集合 val l1 = List("a","b","c")  2.打印下标集合数据 println(l1(0)" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ScalaList集合的使用方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                    <a href="/">
+                                        <span>Loon Node</span>
+                                        </a>
+                </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">ScalaList集合的使用方法</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3> <a id="List_0" rel="nofollow"></a>List集合</h3> <p>集合中的值不能改变 会报错 而数组可以改变 因为集合是常量</p> <p><strong>1.创建List集合</strong></p> <pre><code>val l1 = List("a","b","c") </code></pre> <p><strong>2.打印下标集合数据</strong></p> <pre><code>println(l1(0)) </code></pre> <p><strong>3.循环集合数据</strong></p> <pre><code>    for (a &lt;- l1){       println(a)     } </code></pre> <p><strong>4.Nil方式创建集合</strong></p> <pre><code>//Nil：空     val l2 = "a" :: ("b" :: Nil)     //论方便的话 还真不如直接创建一个List集合 最后Nil只是作为一个空列表     val l3 = 1 :: (2 :: (3 :: Nil)) </code></pre> <p><strong>5.判断是否为空，不为空返回false</strong></p> <pre><code>    println(l2.isEmpty) </code></pre> <p><strong>集合符号比较多 方法比较多</strong></p> <p><strong>6.连接符</strong></p> <pre><code>    println(l1 ::: l3) //连接列表     println("d"+:l1)//顶部添加元素     println("c"+l1)     println(l1 :+"c")//列表后添加元素 </code></pre> <p><strong>7.将集合数据转换成字符串</strong></p> <pre><code>    val s1 = new StringBuilder()     println(l1.addString(s1)) </code></pre> <p><strong>8.检测是否包含指定元素</strong></p> <pre><code>println(l1.contains("b")) </code></pre> <p><strong>9.集合数据去重</strong></p> <pre><code>println(l1.distinct)//去除重复数据 </code></pre> <p><strong>10.exists 判断是否包含某个值</strong></p> <pre><code>println(l1.exists(       //列表中每一个值取出 作为实参调用下面的匿名函数       //x =参数 匿名函数       x =&gt;{         //方法主体         println("很多操作")         //方法返回值         x =="c" //返回布尔类型       }     )) </code></pre> <p><strong>11.过滤集合 filter</strong></p> <pre><code>println(l3.filter(       x =&gt;         //因为是匿名函数 这里可以做其他处理         //y也可以判断等于某一个元素 某一个对象等等         x &gt;2//筛选数据 筛选数据大于2的         //x.length &gt; 2//返回true ,则存入另外一个集合存入     )) </code></pre> <p><strong>12.forall 检测所有元素，如果都符合条件，则返回true</strong></p> <pre><code>    println(l1.forall(       x =&gt;{         println("比大小"+x.length)         x.length &gt;0//有没有大于2       }     )) </code></pre> <p><strong>13.foreache循环 也可用匿名函数的方式循环</strong></p> <pre><code>    l1.foreach(println(_))     l1.foreach(       a =&gt; {//也可加匿名函数         println("遍历的"+a)       }     ) </code></pre> <p><strong>14.获取列表第一个元素 类似exists方法 返回的是下表 没有返回-1</strong></p> <pre><code>println(l1.indexOf("a")) </code></pre> <p><strong>15.返回列表长度</strong></p> <pre><code>println(l1.length) </code></pre> <p><strong>16.map 遍历集合，执行函数，并把所有的返回值组成新的集合</strong></p> <pre><code>println(l1.map(//作用和foreach一样 只不过把每一个都处理       x =&gt;         x+"2" //进行运算 并把结果放在新的集合中     )) </code></pre> <p><strong>17.max min sum返回集合最大值 最小值 求和</strong>字符串不能求和 按照字符串a的字节码是96**</p> <pre><code>    println(l1.max)     println(l1.min)     println(l3.sum) </code></pre> <p><strong>18.一系列to开头方法 截取这个列的前几位</strong></p> <pre><code>    println(l1.take(2))//截取前两位     l1.take(2).foreach(println(_))//截取后循环打印 </code></pre> <p><strong>19.转换数组</strong></p> <pre><code>println(l1.toArray) </code></pre> <p><strong>20.转换集合</strong></p> <pre><code>val a = Array(1,2,3)     println(a.toList) </code></pre> <h3> <a id="_167" rel="nofollow"></a>综合应用</h3> <pre><code>  def d2()={     val data = List(       //记录的id 用户id 性别 0:男 1：女       "1,1001,0",       "2,1002,1",       "3,1003,0"     )     //女性数量     //一条一条去处理     val result = data.map(       line =&gt;  line.split(",")(2)//split 以符号间隔隔开转换为数组     )     //result.take(2).foreach(println(_))//截取前两位 只要女性男性的值     val sexNum = result.filter(       x =&gt; x == "0"     ).length     println("女性数量为"+sexNum)     println("女性用户所占百分比"+(sexNum.toDouble/result.length.toDouble))   } </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-58526.htm">动物疫苗的概念和特点是什么 动物疫苗的概念和特点是什么呢</a></p>
+                                        <p>下一个：<a href="/news/article-59482.htm">学美容要多大年龄（学美容要多大年龄合适）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-free-node-subscribe.htm" title="「1月10日」每天更新18.9M/S，Clash/Shadowrocket/SSR/V2ray/Loon免费节点订阅链接">「1月10日」每天更新18.9M/S，Clash/Shadowrocket/SSR/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34384.htm" title="猫名字最旺家数字取名（猫的名字洋气招财）">猫名字最旺家数字取名（猫的名字洋气招财）</a></li>
+                        <li class="py-2"><a href="/news/article-24260.htm" title="疫苗瓶回收处理（疫苗空瓶回收登记表）">疫苗瓶回收处理（疫苗空瓶回收登记表）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-latest-loon-node.htm" title="「12月6日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接">「12月6日」最高速度20.4M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-58526.htm" title="动物疫苗的概念和特点是什么 动物疫苗的概念和特点是什么呢">动物疫苗的概念和特点是什么 动物疫苗的概念和特点是什么呢</a></li>
+                        <li class="py-2"><a href="/news/article-50682.htm" title="宠物诊所申请动物诊疗许可证的条件是什么（宠物诊所办理流程）">宠物诊所申请动物诊疗许可证的条件是什么（宠物诊所办理流程）</a></li>
+                        <li class="py-2"><a href="/news/article-54433.htm" title="动物医院需要什么手续才能开药（动物医院需要什么手续才能开药品）">动物医院需要什么手续才能开药（动物医院需要什么手续才能开药品）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-today-loon-node.htm" title="「12月1日」最高速度21.5M/S，2024年Loon每天更新免费节点订阅链接">「12月1日」最高速度21.5M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-loon-node.htm" title="「11月5日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接">「11月5日」最高速度22.1M/S，2024年Loon每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-43195.htm" title="宠物粮食在哪里进货的好一点（宠物粮食哪里批发）">宠物粮食在哪里进货的好一点（宠物粮食哪里批发）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
