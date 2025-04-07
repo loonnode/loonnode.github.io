@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-88536.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>spring boot@EnableXXXX注解编程模型分析</title>
+        <meta name="description" content="在spring boot中，@EnableXXX注解的功能通常是开启某一种功能。根据某些外部配置自动装配一些bean，来达到开启某些功能的目的。光说很抽象，要具体分析。 @Enable模型的实现方式基" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-88536.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="spring boot@EnableXXXX注解编程模型分析" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/d48684f727d51b441a9df78f8937cb5b.webp" />
+        <meta property="og:release_date" content="2025-04-04T09:12:00" />
+    <meta property="og:updated_time" content="2025-04-04T09:12:00" />
+        <meta property="og:description" content="在spring boot中，@EnableXXX注解的功能通常是开启某一种功能。根据某些外部配置自动装配一些bean，来达到开启某些功能的目的。光说很抽象，要具体分析。 @Enable模型的实现方式基" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="spring boot@EnableXXXX注解编程模型分析">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                    <a href="/">
+                                        <span>Loon Node</span>
+                                        </a>
+                </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">spring boot@EnableXXXX注解编程模型分析</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>在spring boot中，@EnableXXX注解的功能通常是开启某一种功能。根据某些外部配置自动装配一些bean，来达到开启某些功能的目的。光说很抽象，要具体分析。</p> <p>@Enable模型的实现方式基本有3种。一个基本的@Enable注解的模型如下。</p> <pre class="prettyprint"><code class="language-java hljs"><span class="hljs-annotation">@Target</span>(ElementType.TYPE) <span class="hljs-annotation">@Retention</span>(RetentionPolicy.RUNTIME) <span class="hljs-annotation">@Documented</span> <span class="hljs-annotation">@Inherited</span> <span class="hljs-annotation">@Import</span>(XXXX.class) <span class="hljs-keyword">public</span> @<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">EnableDiscoveryClient</span> {<!-- --></span>     <span class="hljs-javadoc">/**     * If true, the ServiceRegistry will automatically register the local server.     */</span>    <span class="hljs-keyword">boolean</span> autoRegister() <span class="hljs-keyword">default</span> <span class="hljs-keyword">true</span>; }</code></pre> <p>对应XXXX.class的不同，有3种实现方式。</p> <ul> <li>普通配置类，里面包含@Bean方法用于实例化bean</li> <li>ImportSelector实现类</li> <li>ImportBeanDefinitionRegistrar实现类</li> </ul> <p>上面3种类都属于@Import注解的导入对象，整个外部化配置过程围绕@Import注解进行解析，导入类。</p> </h1> <p>@Import注解的处理过程大致可以描述为：</p> <ol> <li> <p>寻找BeanFactory中所有被@Configuration注解修饰的类，包括被@Configuration派生注解修饰的类。</p> </li> <li> <p>寻找被@Configuration注解修饰的类上的所有注解元信息（这里的搜索不仅是搜索当前注解，还会迭代往修饰注解的注解的注解上层…..一直搜索@Import，直到注解最原始的注解），获取@Import注解的导入类信息，如果没有则不处理。</p> </li> <li> <p>根据导入类的信息，判定为</p> <ul> <li>普通配置类，里面包含@Bean方法用于实例化bean</li> <li>ImportSelector实现类</li> <li>ImportBeanDefinitionRegistrar实现类</li> </ul> <p>3种形式进行处理。</p> </li> </ol> <p>从context启动开始跟踪主线处理代码，调用链条如下。</p> <ul> <li> <p>org.springframework.context.support.AbstractApplicationContext#refresh</p> </li> <li> <p>org.springframework.context.support.AbstractApplicationContext#invokeBeanFactoryPostProcessors</p> </li> <li> <p>org.springframework.context.annotation.ConfigurationClassPostProcessor#postProcessBeanDefinitionRegistry</p> </li> <li> <p>org.springframework.context.annotation.ConfigurationClassPostProcessor#processConfigBeanDefinitions（主线代码，必看）</p> <pre class="prettyprint"><code class="language-java hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">processConfigBeanDefinitions</span>(BeanDefinitionRegistry registry) {   <span class="hljs-comment">//定义@Conguration注解修饰的类注册信息列表</span>  List&lt;BeanDefinitionHolder&gt; configCandidates = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();  String[] candidateNames = registry.getBeanDefinitionNames(); <span class="hljs-comment">//检查当前context中所有的bean注册信息</span>  <span class="hljs-keyword">for</span> (String beanName : candidateNames) {     BeanDefinition beanDef = registry.getBeanDefinition(beanName);     <span class="hljs-keyword">if</span> (ConfigurationClassUtils.isFullConfigurationClass(beanDef) ||           ConfigurationClassUtils.isLiteConfigurationClass(beanDef)) {        <span class="hljs-keyword">if</span> (logger.isDebugEnabled()) {           logger.debug(<span class="hljs-string">"Bean definition has already been processed as a configuration class: "</span> + beanDef);        }     }      <span class="hljs-comment">//检查class是否是@Conguration注解修饰的类，包括被“继承”@Conguration注解的注解，例如@SpringBootConguration，具体可以跟踪ConfigurationClassUtils.checkConfigurationClassCandidate实现</span>     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ConfigurationClassUtils.checkConfigurationClassCandidate(beanDef, <span class="hljs-keyword">this</span>.metadataReaderFactory)) {        configCandidates.add(<span class="hljs-keyword">new</span> BeanDefinitionHolder(beanDef, beanName));     }  }   <span class="hljs-comment">// Return immediately if no @Configuration classes were found</span>  <span class="hljs-keyword">if</span> (configCandidates.isEmpty()) {     <span class="hljs-keyword">return</span>;  }   <span class="hljs-comment">// Sort by previously determined @Order value, if applicable</span>   <span class="hljs-comment">//对配置类排序，顺序由Ordered接口决定</span>  configCandidates.sort((bd1, bd2) -&gt; {     <span class="hljs-keyword">int</span> i1 = ConfigurationClassUtils.getOrder(bd1.getBeanDefinition());     <span class="hljs-keyword">int</span> i2 = ConfigurationClassUtils.getOrder(bd2.getBeanDefinition());     <span class="hljs-keyword">return</span> Integer.compare(i1, i2);  });  <span class="hljs-comment">//......略略略</span>   <span class="hljs-comment">// Parse each @Configuration class</span>   <span class="hljs-comment">//处理每一个配置类</span>  ConfigurationClassParser parser = <span class="hljs-keyword">new</span> ConfigurationClassParser(        <span class="hljs-keyword">this</span>.metadataReaderFactory, <span class="hljs-keyword">this</span>.problemReporter, <span class="hljs-keyword">this</span>.environment,        <span class="hljs-keyword">this</span>.resourceLoader, <span class="hljs-keyword">this</span>.componentScanBeanNameGenerator, registry);  Set&lt;BeanDefinitionHolder&gt; candidates = <span class="hljs-keyword">new</span> LinkedHashSet&lt;&gt;(configCandidates);  Set&lt;ConfigurationClass&gt; alreadyParsed = <span class="hljs-keyword">new</span> HashSet&lt;&gt;(configCandidates.size());  do {      <span class="hljs-comment">//解析处理配置类逻辑</span>     parser.parse(candidates);       <span class="hljs-comment">//......略略略</span>  }  <span class="hljs-keyword">while</span> (!candidates.isEmpty()); <span class="hljs-comment">//......略略略</span> }</code></pre> </li> <li> <p>org.springframework.context.annotation.ConfigurationClassParser#parse(java.util.Set</p> </li> </ul> <h2 id="importselector">ImportSelector</h2> <pre class="prettyprint"><code class="language-String[] importClassNames = selector.selectImports(currentSourceClass.getMetadata()); hljs avrasm">String[] importClassNames = selector<span class="hljs-preprocessor">.selectImports</span>(currentSourceClass<span class="hljs-preprocessor">.getMetadata</span>())<span class="hljs-comment">;</span></code></pre> <p>返回结果是所有需要导入的的类的全限定名。</p> <p>对于全限定名数组，逐个进行org.springframework.context.annotation.ConfigurationClassParser#processImports，相当于循环调用processImports，把新导入的类也当做@Import导入的类处理，如果新导入的类继续导入新的类，就继续org.springframework.context.annotation.ConfigurationClassParser#processImports。直到新导入的类不是</p> <p><code>ImportSelector</code>。</p> <h2 id="importbeandefinitionregistrar处理">ImportBeanDefinitionRegistrar处理</h2> <p>当@Import的类是不是ImportSelector之后，如果是ImportBeanDefinitionRegistrar，那就做BeanDefinition信息注册到BeanFactory操作，具体实现在org.springframework.context.annotation.ImportBeanDefinitionRegistrar#registerBeanDefinitions实现，在这里的处理过程是。</p> <pre class="prettyprint"><code class="hljs avrasm">else if (candidate<span class="hljs-preprocessor">.isAssignable</span>(ImportBeanDefinitionRegistrar<span class="hljs-preprocessor">.class</span>)) {    // Candidate class is an ImportBeanDefinitionRegistrar -&gt;    // delegate to it to register additional bean definitions    Class&lt;?&gt; candidateClass = candidate<span class="hljs-preprocessor">.loadClass</span>()<span class="hljs-comment">;</span>    ImportBeanDefinitionRegistrar registrar =          BeanUtils<span class="hljs-preprocessor">.instantiateClass</span>(candidateClass, ImportBeanDefinitionRegistrar<span class="hljs-preprocessor">.class</span>)<span class="hljs-comment">;</span>    ParserStrategyUtils<span class="hljs-preprocessor">.invokeAwareMethods</span>(          registrar, this<span class="hljs-preprocessor">.environment</span>, this<span class="hljs-preprocessor">.resourceLoader</span>, this<span class="hljs-preprocessor">.registry</span>)<span class="hljs-comment">;</span>          //将ImportBeanDefinitionRegistrar放入map缓存起来    configClass<span class="hljs-preprocessor">.addImportBeanDefinitionRegistrar</span>(registrar, currentSourceClass<span class="hljs-preprocessor">.getMetadata</span>())<span class="hljs-comment">;</span> } </code></pre> <pre class="prettyprint"><code class="language-java hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addImportBeanDefinitionRegistrar</span>(ImportBeanDefinitionRegistrar registrar, AnnotationMetadata importingClassMetadata) {    <span class="hljs-keyword">this</span>.importBeanDefinitionRegistrars.put(registrar, importingClassMetadata); }</code></pre> <p>先缓存@Import导入的ImportBeanDefinitionRegistrar信息，稍后统一调用ImportBeanDefinitionRegistrar加载注册BeanDefinition信息。</p> <h2 id="configurtion注解的类处理">@Configurtion注解的类处理</h2> <p>重复上面的整个流程，处理这个被@Configuration注解标注的类。比较需要注意的是一般@Configuration注解标注的类常用@Bean方式来实例化实例。这里#Bean也会解析出一个BeanMethod信息集合，稍后跟ImportBeanDefinitionRegistrar的缓存信息一样统一调用然后注册BeanDefinition。</p> <pre class="prettyprint"><code class="language-java hljs"><span class="hljs-comment">// Process individual @Bean methods</span> <span class="hljs-comment">//对配置类的@Bean方法处理逻辑</span> <span class="hljs-comment">//获取所有@Bean标注的方法元信息，后续处理</span> Set&lt;MethodMetadata&gt; beanMethods = retrieveBeanMethodMetadata(sourceClass); <span class="hljs-keyword">for</span> (MethodMetadata methodMetadata : beanMethods) {    configClass.addBeanMethod(<span class="hljs-keyword">new</span> BeanMethod(methodMetadata, configClass)); }</code></pre> <h2 id="统一调用配置类解析出来的信息注册beandefinition">统一调用配置类解析出来的信息注册BeanDefinition</h2> <p>在解析完配置类之后，实际还没有进行BeanDefinition的注册，只得到了可以用来注册BeanDefinition的“信息工具”，利用@Bean得到了BeanMethod，@Import（xxxImportBeanDefinitionRegistrar.class）得到了ImportBeanDefinitionRegistrar的实现类。最终要使用这些工具进行BeanDefinition 信息注册。</p> <p>org.springframework.context.annotation.ConfigurationClassPostProcessor#processConfigBeanDefinitions中，当处理完@Configuration注解的类之后就进行ImportBeanDefinitionRegistrar的BeanDefinition注册加载。</p> <pre class="prettyprint"><code class="language-java hljs"><span class="hljs-comment">//处理@Configuration,递归寻找@Configuration，以及解析@Configuration里面的@Import、@Bean、@Component、@ImportResource等。</span> parser.parse(candidates); parser.validate();  <span class="hljs-comment">//获取parser中解析得到的所有配置类</span> Set&lt;ConfigurationClass&gt; configClasses = <span class="hljs-keyword">new</span> LinkedHashSet&lt;&gt;(parser.getConfigurationClasses()); configClasses.removeAll(alreadyParsed);  <span class="hljs-comment">// Read the model and create bean definitions based on its content</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.reader == <span class="hljs-keyword">null</span>) {    <span class="hljs-keyword">this</span>.reader = <span class="hljs-keyword">new</span> ConfigurationClassBeanDefinitionReader(          registry, <span class="hljs-keyword">this</span>.sourceExtractor, <span class="hljs-keyword">this</span>.resourceLoader, <span class="hljs-keyword">this</span>.environment,          <span class="hljs-keyword">this</span>.importBeanNameGenerator, parser.getImportRegistry()); } <span class="hljs-comment">//根据递归找出的配置类和解析配置类得到的信息，加载BeanDefinition</span> <span class="hljs-keyword">this</span>.reader.loadBeanDefinitions(configClasses); </code></pre> <ul> <li> <p>org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader#loadBeanDefinitions</p> <ul> <li>org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader#loadBeanDefinitionsForConfigurationClass</li> </ul> <pre class="prettyprint"><code class="language-java hljs"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">loadBeanDefinitionsForConfigurationClass</span>(       ConfigurationClass configClass, TrackedConditionEvaluator trackedConditionEvaluator) {     <span class="hljs-keyword">if</span> (trackedConditionEvaluator.shouldSkip(configClass)) {       String beanName = configClass.getBeanName();       <span class="hljs-keyword">if</span> (StringUtils.hasLength(beanName) &amp;&amp; <span class="hljs-keyword">this</span>.registry.containsBeanDefinition(beanName)) {          <span class="hljs-keyword">this</span>.registry.removeBeanDefinition(beanName);       }       <span class="hljs-keyword">this</span>.importRegistry.removeImportingClass(configClass.getMetadata().getClassName());       <span class="hljs-keyword">return</span>;    }     <span class="hljs-keyword">if</span> (configClass.isImported()) {       registerBeanDefinitionForImportedConfigurationClass(configClass);    }    <span class="hljs-keyword">for</span> (BeanMethod beanMethod : configClass.getBeanMethods()) {        <span class="hljs-comment">//利用@Bean的Method加载BeanDefinition</span>       loadBeanDefinitionsForBeanMethod(beanMethod);    }    loadBeanDefinitionsFromImportedResources(configClass.getImportedResources());     <span class="hljs-comment">//利用缓存的ImportBeanDefinitionRegistrar加载注册beandefintion</span>    loadBeanDefinitionsFromRegistrars(configClass.getImportBeanDefinitionRegistrars()); }</code></pre> <ul> <li>org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader#loadBeanDefinitionsFromRegistrars（以ImportBeanDefinitionRegistrar为例跟踪）  <ul> <li>org.springframework.context.annotation.ImportBeanDefinitionRegistrar#registerBeanDefinitions（注册BeanDefinition信息到BeanFactory）</li> </ul> </li> </ul> </li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-87839.htm">常用动物疫苗种类 常用动物疫苗种类及其一般特点</a></p>
+                                        <p>下一个：<a href="/news/article-88537.htm">tensorflow学习笔记（二）：tensor 变换</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-node-share.htm" title="「3月27日」每天更新21.5M/S，Shadowrocket/SSR/V2ray/Clash/Loon免费节点订阅链接">「3月27日」每天更新21.5M/S，Shadowrocket/SSR/V2ray/Clash/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-84960.htm" title="安安宠医上班时间（安安宠物医院招聘网）">安安宠医上班时间（安安宠物医院招聘网）</a></li>
+                        <li class="py-2"><a href="/news/article-77265.htm" title="宠物猫疫苗需要打几针,多少钱（宠物猫疫苗需要打几针,多少钱一针）">宠物猫疫苗需要打几针,多少钱（宠物猫疫苗需要打几针,多少钱一针）</a></li>
+                        <li class="py-2"><a href="/news/article-90008.htm" title="动物疫苗在哪里打针好一点 动物疫苗在哪里打针好一点呢">动物疫苗在哪里打针好一点 动物疫苗在哪里打针好一点呢</a></li>
+                        <li class="py-2"><a href="/news/article-81415.htm" title="宠物猫疫苗是什么疫苗（宠物猫疫苗接种时间表）">宠物猫疫苗是什么疫苗（宠物猫疫苗接种时间表）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-loon-node-share.htm" title="「3月16日」每天更新23M/S，V2ray/Shadowrocket/Clash/SSR/Loon免费节点订阅链接">「3月16日」每天更新23M/S，V2ray/Shadowrocket/Clash/SSR/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-70573.htm" title="深圳宠物领养中心有哪些（深圳市领养宠物中心）">深圳宠物领养中心有哪些（深圳市领养宠物中心）</a></li>
+                        <li class="py-2"><a href="/news/article-71892.htm" title="动物疫苗接种时间间隔多长时间打（动物疫苗接种时间间隔多长时间打第一针）">动物疫苗接种时间间隔多长时间打（动物疫苗接种时间间隔多长时间打第一针）</a></li>
+                        <li class="py-2"><a href="/news/article-79988.htm" title="win11系统怎么更改屏幕刷新率">win11系统怎么更改屏幕刷新率</a></li>
+                        <li class="py-2"><a href="/news/article-74562.htm" title="东门宠物用品批发市场地址（东门老街宠物店）">东门宠物用品批发市场地址（东门老街宠物店）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

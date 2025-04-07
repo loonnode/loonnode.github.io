@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://loonnode.github.io/news/article-90751.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>javascript:将其他类型值转换成布尔类型值的方法</title>
+        <meta name="description" content="1.利用Boolean对象进行转换  var num123 = 123, str = 'abc', o = {name:'test'}, num0 = 0; num123 = Boolean(num1" />
+        <link rel="icon" href="/assets/website/img/loonnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Loon Node机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://loonnode.github.io/news/article-90751.htm" />
+    <meta property="og:site_name" content="Loon Node机场订阅官网" />
+    <meta property="og:title" content="javascript:将其他类型值转换成布尔类型值的方法" />
+    <meta property="og:image" content="https://loonnode.github.io/uploads/20240719/bb70645c4726ead7ec9702ce578087ac.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:03:40" />
+    <meta property="og:updated_time" content="2025-04-07T09:03:40" />
+        <meta property="og:description" content="1.利用Boolean对象进行转换  var num123 = 123, str = 'abc', o = {name:'test'}, num0 = 0; num123 = Boolean(num1" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="javascript:将其他类型值转换成布尔类型值的方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/loonnode/bootstrap.min.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/assets/website/css/loonnode/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cNoto+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="/assets/website/js/frontend/loonnode/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- OwlCarosuel CSS -->
+    <link href="/assets/website/css/loonnode/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="/assets/website/css/loonnode/owl.theme.default.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/loonnode/aos.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X9J5FVHVS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2X9J5FVHVS');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header-section-->
+    <div class="header-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="logo">
+                    <a href="/">
+                                        <span>Loon Node</span>
+                                        </a>
+                </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <!-- navigations-->
+                    <div class="navigation">
+                        <div id="navigation">
+                            <ul>
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navigations-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /. header-section-->
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div data-aos="fade-up" class="page-caption">
+                        <h1 class="page-title">javascript:将其他类型值转换成布尔类型值的方法</h1>
+                        <div class="nav-box">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- attorney-section -->
+    <div class="space-medium bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><span style="white-space:pre"></span>1.利用Boolean对象进行转换</p> <p><span style="white-space:pre"></span></p> <pre><code class="language-javascript">var num123 = 123, str = 'abc', o = {name:'test'}, num0 = 0; num123 = Boolean(num123); //true num0 = Boolean(num0); //false str = Boolean(str); //true o = Boolean(o); //true</code></pre> <p><span style="white-space:pre"></span>2. 利用两个'!'运算符，第一个'!'将值转换成布尔值并取其值的非值，第二个'!'将其布尔值还原，类似于“负负得正”的道理。<span style="white-space:pre"></span></p> <p><span style="white-space:pre"></span></p> <pre><code class="language-javascript">var num123 = 123, str = 'abc', o = {name:'test'}, num0 = 0; num123 = !!(num123); //true num0 = !!(num0); //false str = !!(str); //true o = !!(o); //true</code></pre> <p><span style="white-space:pre"></span>得到的结果同方法1.</p> <p><span style="white-space:pre"></span>最后要<strong><span style="color:#ff0000">知道</span></strong>：任意的javascript的值都可以转换成布尔值。下面这些值会被转换成false:</p> <p><span style="white-space:pre"></span></p> <pre><code class="language-javascript">undefined,null,0,-0,NaN,"" //空字符串</code></pre> <p><span style="white-space:pre"></span></p> <p>需要<span style="color:#ff0000"><strong>注意</strong></span>的是'0'这个仅仅包含0的字符串会转成true！</p> <p>补充一下null和undefined的特殊性：</p> <pre><code class="language-javascript">null == undefined //true null === undefined //false</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-90008.htm">动物疫苗在哪里打针好一点 动物疫苗在哪里打针好一点呢</a></p>
+                                        <p>下一个：<a href="/news/article-90753.htm">动物疫苗龙头上市公司（动物疫苗龙头股票）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-72559.htm" title="狗粮招聘业务（狗粮厂招聘业务员）">狗粮招聘业务（狗粮厂招聘业务员）</a></li>
+                        <li class="py-2"><a href="/news/article-66708.htm" title="狗必须得打（狗一定要打疫苗吗）">狗必须得打（狗一定要打疫苗吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-free-node-subscribe.htm" title="「3月13日」每天更新20.9M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接">「3月13日」每天更新20.9M/S，SSR/Clash/Shadowrocket/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-loon-node-share.htm" title="「3月25日」每天更新21.9M/S，Clash/V2ray/SSR/Shadowrocket/Loon免费节点订阅链接">「3月25日」每天更新21.9M/S，Clash/V2ray/SSR/Shadowrocket/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-74562.htm" title="东门宠物用品批发市场地址（东门老街宠物店）">东门宠物用品批发市场地址（东门老街宠物店）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-6-linux-loon-github.htm" title="「4月6日」每天更新18M/S，Shadowrocket/Clash/SSR/V2ray/Loon免费节点订阅链接">「4月6日」每天更新18M/S，Shadowrocket/Clash/SSR/V2ray/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-79315.htm" title="狗粮生产机器设备厂家（狗粮生产机器设备厂家电话）">狗粮生产机器设备厂家（狗粮生产机器设备厂家电话）</a></li>
+                        <li class="py-2"><a href="/news/article-74561.htm" title="springboot实现WebAPI版本控制">springboot实现WebAPI版本控制</a></li>
+                        <li class="py-2"><a href="/news/article-69259.htm" title="动物疫苗规定最新消息通知（动物 疫苗）">动物疫苗规定最新消息通知（动物 疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-77266.htm" title="动物医生叫什么医生（医动物的医生叫什么）">动物医生叫什么医生（医动物的医生叫什么）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- attorney-section -->
+        <!-- footer -->
+    <div class="footer">
+        <div class="tiny-footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <p>
+                            <a href="/">Loon Node机场订阅官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/loonnode/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/loonnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/menumaker.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/return-to-top.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/sticky-header.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/jquery.sticky.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/multiple-carousel.js"></script>
+    <script src="/assets/website/js/frontend/loonnode/aos.js"></script>
+    <script>
+    AOS.init({
+        easing: 'linear',
+        duration: 800,
+    });
+    </script>
+    <script>
+    AOS.init({
+        disable: 'mobile'
+    });
+    </script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
