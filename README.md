@@ -1,4 +1,4 @@
-# 「4月7日」每天更新18.9M/S，V2ray/SSR/Shadowrocket/Clash/Loon免费节点订阅链接  更新时间 2025-04-07 09:17:34
+# 「4月12日」每天更新20.4M/S，V2ray/Clash/SSR/Shadowrocket/Loon免费节点订阅链接  更新时间 2025-04-12 09:08:14
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://loonnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://loonnode.github.io/uploads/2025/04/0-20250407.yaml
-- https://loonnode.github.io/uploads/2025/04/1-20250407.yaml
-- https://loonnode.github.io/uploads/2025/04/2-20250407.yaml
-- https://loonnode.github.io/uploads/2025/04/3-20250407.yaml
-- https://loonnode.github.io/uploads/2025/04/4-20250407.yaml
+- https://loonnode.github.io/uploads/2025/04/0-20250412.yaml
+- https://loonnode.github.io/uploads/2025/04/1-20250412.yaml
+- https://loonnode.github.io/uploads/2025/04/2-20250412.yaml
+- https://loonnode.github.io/uploads/2025/04/3-20250412.yaml
+- https://loonnode.github.io/uploads/2025/04/4-20250412.yaml
 
 ### V2ray订阅链接
 
-- https://loonnode.github.io/uploads/2025/04/0-20250407.txt
-- https://loonnode.github.io/uploads/2025/04/1-20250407.txt
-- https://loonnode.github.io/uploads/2025/04/2-20250407.txt
-- https://loonnode.github.io/uploads/2025/04/3-20250407.txt
-- https://loonnode.github.io/uploads/2025/04/4-20250407.txt
+- https://loonnode.github.io/uploads/2025/04/0-20250412.txt
+- https://loonnode.github.io/uploads/2025/04/1-20250412.txt
+- https://loonnode.github.io/uploads/2025/04/2-20250412.txt
+- https://loonnode.github.io/uploads/2025/04/3-20250412.txt
+- https://loonnode.github.io/uploads/2025/04/4-20250412.txt
 
 ### Sing-box订阅链接
 
-- https://loonnode.github.io/uploads/2025/04/20250407.json
+- https://loonnode.github.io/uploads/2025/04/20250412.json
 
 ## 更多clash节点订阅 ：
 
