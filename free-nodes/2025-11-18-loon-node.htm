@@ -373,11 +373,6 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的测速功能不显示结果怎么办？</h5></div>
-    <div class="panel-body">
-        测速依赖于节点响应时间与服务器网络质量。若测速为空白，请检查系统时间同步、网络防火墙及代理端口设置是否正确；也可更新到最新版本修复已知测速模块异常问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 为什么在 iOS 上广受欢迎？</h5></div>
     <div class="panel-body">
         Potatso Lite 是一款操作简洁的代理工具，支持多种代理协议和自定义规则。它适合不需要复杂配置的用户，界面友好、性能稳定，非常适合日常轻量使用和应用代理。<hr />    </div>
@@ -388,29 +383,19 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
         协议插件可增强抗封锁能力，加密方式确保数据安全。合理搭配可模拟正常流量特征，同时保障传输安全，有助于在封锁严格环境下维持节点可用性和稳定连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 和 Nekoray 有何关系？</h5></div>
-    <div class="panel-body">
-        Nekobox 是 Nekoray 的移动端衍生版，界面简洁，主要适配 Android 平台。两者使用同样的核心逻辑与配置结构，因此订阅文件和节点信息可以兼容共享。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 与传统代理协议有何不同？</h5></div>
-    <div class="panel-body">
-        Hysteria2 使用基于 QUIC 的高性能传输协议，可显著降低延迟并提升抗干扰能力。它特别适合高丢包或高延迟网络环境，提供流畅的浏览和视频播放体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何实现自动节点切换？</h5></div>
-    <div class="panel-body">
-        通过延迟测速和策略组配置，PassWall2 可自动切换到延迟最低的节点。这样用户无需手动操作，即可在访问网页、视频或游戏时保持高速和稳定连接，优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 节点延迟检测如何帮助分流？</h5></div>
     <div class="panel-body">
         Clash 会定期测试节点延迟，并结合策略组自动选择最优节点处理流量。避免访问高延迟或失效节点，提高网页浏览、视频播放和游戏速度及稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 在移动网络的优势？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的测速功能不显示结果怎么办？</h5></div>
     <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。<hr />    </div>
+        测速依赖于节点响应时间与服务器网络质量。若测速为空白，请检查系统时间同步、网络防火墙及代理端口设置是否正确；也可更新到最新版本修复已知测速模块异常问题。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 与传统代理协议有何不同？</h5></div>
+    <div class="panel-body">
+        Hysteria2 使用基于 QUIC 的高性能传输协议，可显著降低延迟并提升抗干扰能力。它特别适合高丢包或高延迟网络环境，提供流畅的浏览和视频播放体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 使用 mKCP 有哪些适合场景？</h5></div>
@@ -420,7 +405,22 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 如何实现按域名分流？</h5></div>
     <div class="panel-body">
-        PassWall2 可通过域名规则匹配请求，将流量分流至指定节点。结合策略组和自动测速，可让不同网站走不同节点，实现加速和优化访问速度的效果。    </div>
+        PassWall2 可通过域名规则匹配请求，将流量分流至指定节点。结合策略组和自动测速，可让不同网站走不同节点，实现加速和优化访问速度的效果。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 和 Nekoray 有何关系？</h5></div>
+    <div class="panel-body">
+        Nekobox 是 Nekoray 的移动端衍生版，界面简洁，主要适配 Android 平台。两者使用同样的核心逻辑与配置结构，因此订阅文件和节点信息可以兼容共享。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何实现自动节点切换？</h5></div>
+    <div class="panel-body">
+        通过延迟测速和策略组配置，PassWall2 可自动切换到延迟最低的节点。这样用户无需手动操作，即可在访问网页、视频或游戏时保持高速和稳定连接，优化网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 在移动网络的优势？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -449,16 +449,16 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-3-free-node-subscribe-links.htm" title="「10月3日」每天更新18.4M/S，SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接">「10月3日」每天更新18.4M/S，SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-7-node-share.htm" title="「11月7日」每天更新22.7M/S，V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接">「11月7日」每天更新22.7M/S，V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-loon-github.htm" title="「10月8日」每天更新20.1M/S，Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Loon免费节点订阅链接">「10月8日」每天更新20.1M/S，Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-4-free-subscribe-node.htm" title="「11月4日」每天更新19.7M/S，Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Loon免费节点订阅链接">「11月4日」每天更新19.7M/S，Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-21-loon-node-share.htm" title="「11月21日」每天更新19.8M/S，SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接">「11月21日」每天更新19.8M/S，SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-15-loon-node-share.htm" title="「10月15日」每天更新18.1M/S，SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Loon免费节点订阅链接">「10月15日」每天更新18.1M/S，SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-12-free-high-speed-nodes.htm" title="「10月12日」每天更新20.4M/S，Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Loon免费节点订阅链接">「10月12日」每天更新20.4M/S，Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-18-node-share.htm" title="「10月18日」每天更新22.1M/S，SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Loon免费节点订阅链接">「10月18日」每天更新22.1M/S，SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-26-loon-github.htm" title="「10月26日」每天更新21.4M/S，SSR节点/Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/Loon免费节点订阅链接">「10月26日」每天更新21.4M/S，SSR节点/Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/Loon免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-7-free-node-subscribe-links.htm" title="「10月7日」每天更新22.2M/S，Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点/Loon免费节点订阅链接">「10月7日」每天更新22.2M/S，Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-loon-windows.htm" title="「11月23日」每天更新20.7M/S，SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Loon免费节点订阅链接">「11月23日」每天更新20.7M/S，SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-11-free-node-subscribe-links.htm" title="「11月11日」每天更新19.6M/S，Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Loon免费节点订阅链接">「11月11日」每天更新19.6M/S，Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-node-subscribe.htm" title="「11月5日」每天更新20.4M/S，Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Loon免费节点订阅链接">「11月5日」每天更新20.4M/S，Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-30-loon-github.htm" title="「11月30日」每天更新22.6M/S，Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点/Loon免费节点订阅链接">「11月30日」每天更新22.6M/S，Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-loon-node.htm" title="「11月27日」每天更新20.1M/S，SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接">「11月27日」每天更新20.1M/S，SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-12-linux-loon-github.htm" title="「11月12日」每天更新20.6M/S，Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接">「11月12日」每天更新20.6M/S，Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-18-loon-node.htm" title="「11月18日」每天更新22.4M/S，SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/Loon免费节点订阅链接">「11月18日」每天更新22.4M/S，SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-node-share.htm" title="「11月19日」每天更新19.7M/S，Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点/Loon免费节点订阅链接">「11月19日」每天更新19.7M/S，Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-linux-loon-github.htm" title="「11月9日」每天更新20.5M/S，V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Loon免费节点订阅链接">「11月9日」每天更新20.5M/S，V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Loon免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-6-loon-node-github.htm" title="「11月6日」每天更新22.5M/S，Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接">「11月6日」每天更新22.5M/S，Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -470,10 +470,10 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
