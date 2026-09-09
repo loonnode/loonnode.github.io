@@ -326,44 +326,9 @@ A4：并非所有型号均支持，尤其是老旧型号或不支持第三方固
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的日志记录如何帮助排错？</h5></div>
-    <div class="panel-body">
-        WinXray 提供详细的连接日志，包括入站、出站流量信息及错误提示。通过查看日志，用户可以快速定位连接失败、节点不可达或配置错误的原因，提高问题解决效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Nginx 上为 Vmess/WS 配置反向代理与 TLS？</h5></div>
-    <div class="panel-body">
-        在 Nginx 中配置 HTTPS 站点并将特定路径（如 /ray）反向代理到 V2Ray 的 WebSocket 端口，确保 proxy_set_header 设置正确（Host、X-Real-IP 等）。同时使用 certbot 获取并自动续期 TLS 证书以维护安全。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
-    <div class="panel-body">
-        可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 如何管理不同协议节点？</h5></div>
-    <div class="panel-body">
-        Nekobox 可以同时管理 Shadowsocks、VMess、Trojan 等多种协议节点。结合策略组和分流规则，可实现不同流量走不同节点，提升网络效率和管理便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 策略组如何提升在线视频体验？</h5></div>
     <div class="panel-body">
         Surfboard 可通过策略组将视频流量分配到低延迟、高带宽节点，自动切换到最佳节点，减少缓冲和卡顿，提高在线视频播放的流畅性和整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 的节点导入是否支持批量 URL？</h5></div>
-    <div class="panel-body">
-        支持。Nekoray 可通过订阅 URL 批量导入节点，并定期更新。用户无需手动添加每个节点，保证节点列表始终最新，提高使用效率和便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
-    <div class="panel-body">
-        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 的内置延迟测试为什么与系统 ping 不同？</h5></div>
@@ -371,9 +336,44 @@ A4：并非所有型号均支持，尤其是老旧型号或不支持第三方固
         客户端的延迟测试通常基于 TCP 或特定探测包，而系统 ping 使用 ICMP，两者网络路径与优先级可能不同。此外，防火墙或服务器对 ICMP 的响应可能被限制，导致测试结果存在差异。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的日志记录如何帮助排错？</h5></div>
+    <div class="panel-body">
+        WinXray 提供详细的连接日志，包括入站、出站流量信息及错误提示。通过查看日志，用户可以快速定位连接失败、节点不可达或配置错误的原因，提高问题解决效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
+    <div class="panel-body">
+        可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
+    <div class="panel-body">
+        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>如何备份 Clash 配置文件？</h5></div>
     <div class="panel-body">
-        Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。    </div>
+        Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 Nginx 上为 Vmess/WS 配置反向代理与 TLS？</h5></div>
+    <div class="panel-body">
+        在 Nginx 中配置 HTTPS 站点并将特定路径（如 /ray）反向代理到 V2Ray 的 WebSocket 端口，确保 proxy_set_header 设置正确（Host、X-Real-IP 等）。同时使用 certbot 获取并自动续期 TLS 证书以维护安全。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 如何管理不同协议节点？</h5></div>
+    <div class="panel-body">
+        Nekobox 可以同时管理 Shadowsocks、VMess、Trojan 等多种协议节点。结合策略组和分流规则，可实现不同流量走不同节点，提升网络效率和管理便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 的节点导入是否支持批量 URL？</h5></div>
+    <div class="panel-body">
+        支持。Nekoray 可通过订阅 URL 批量导入节点，并定期更新。用户无需手动添加每个节点，保证节点列表始终最新，提高使用效率和便利性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -421,16 +421,16 @@ A4：并非所有型号均支持，尤其是老旧型号或不支持第三方固
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/loon-node-2026-8-7.htm" title="「8月7日」每天更新18M/S，V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Loon免费节点订阅链接">「8月7日」每天更新18M/S，V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-3.htm" title="「8月3日」每天更新19.7M/S，Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Loon免费节点订阅链接">「8月3日」每天更新19.7M/S，Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-19-free-loon-node.htm" title="「7月19日」每天更新19.5M/S，Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/Loon免费节点订阅链接">「7月19日」每天更新19.5M/S，Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-7-29.htm" title="「7月29日」每天更新19.8M/S，Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/Loon免费节点订阅链接">「7月29日」每天更新19.8M/S，Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-21-free-high-speed-nodes.htm" title="「7月21日」每天更新19.6M/S，Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接">「7月21日」每天更新19.6M/S，Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-free-node-subscribe.htm" title="「8月2日」每天更新20.3M/S，Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/Loon免费节点订阅链接">「8月2日」每天更新20.3M/S，Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-27-loon-node.htm" title="「7月27日」每天更新21.5M/S，Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Loon免费节点订阅链接">「7月27日」每天更新21.5M/S，Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-9.htm" title="「8月9日」每天更新20M/S，Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Loon免费节点订阅链接">「8月9日」每天更新20M/S，Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-7-31.htm" title="「7月31日」每天更新19.2M/S，Trojan节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接">「7月31日」每天更新19.2M/S，Trojan节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-11.htm" title="「8月11日」每天更新19.2M/S，Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Loon免费节点订阅链接">「8月11日」每天更新19.2M/S，Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-20-free-node-subscribe.htm" title="「8月20日」每天更新20.4M/S，SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接">「8月20日」每天更新20.4M/S，SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-loon-node-2026-8-21.htm" title="「8月21日」每天更新22.6M/S，Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点/Loon免费节点订阅链接">「8月21日」每天更新22.6M/S，Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-loon-windows.htm" title="「8月6日」每天更新21M/S，Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接">「8月6日」每天更新21M/S，Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-loon-node-share.htm" title="「8月22日」每天更新19.1M/S，Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Trojan节点/Loon免费节点订阅链接">「8月22日」每天更新19.1M/S，Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Trojan节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-27.htm" title="「8月27日」每天更新18.1M/S，Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Loon免费节点订阅链接">「8月27日」每天更新18.1M/S，Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-free-node-subscribe.htm" title="「9月4日」每天更新22.9M/S，V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Loon免费节点订阅链接">「9月4日」每天更新22.9M/S，V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/linux-loon-github-2026-8-29.htm" title="「8月29日」每天更新18.7M/S，Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接">「8月29日」每天更新18.7M/S，Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-loon-windows.htm" title="「8月18日」每天更新19.4M/S，Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Loon免费节点订阅链接">「8月18日」每天更新19.4M/S，Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-17.htm" title="「8月17日」每天更新21.1M/S，Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点/Loon免费节点订阅链接">「8月17日」每天更新21.1M/S，Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-free-node-subscribe.htm" title="「9月2日」每天更新18M/S，Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Loon免费节点订阅链接">「9月2日」每天更新18M/S，Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Loon免费节点订阅链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -442,10 +442,10 @@ A4：并非所有型号均支持，尤其是老旧型号或不支持第三方固
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>

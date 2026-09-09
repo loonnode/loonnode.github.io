@@ -342,9 +342,9 @@ A：这主要取决于服务商的隐私政策。建议选择承诺无日志政�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络体验？</h5></div>
     <div class="panel-body">
-        Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
@@ -352,29 +352,9 @@ A：这主要取决于服务商的隐私政策。建议选择承诺无日志政�
         QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。可为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
-    <div class="panel-body">
-        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
-    <div class="panel-body">
-        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络体验？</h5></div>
-    <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的路由规则能否实现分国家代理？</h5></div>
     <div class="panel-body">
         Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 节点订阅自动更新如何配置？</h5></div>
-    <div class="panel-body">
-        用户可添加订阅 URL，Nekoray 会定期下载并替换旧节点。这样可保证节点列表始终最新，减少手动维护，提高使用效率，同时保证网络访问稳定可靠。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的策略组支持按延迟选择节点吗？</h5></div>
@@ -382,14 +362,34 @@ A：这主要取决于服务商的隐私政策。建议选择承诺无日志政�
         支持。Sing-box 会根据节点延迟自动选择最优节点，结合策略组和路由规则，实现智能分流。延迟最低的节点优先被使用，提高网络访问速度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
+    <div class="panel-body">
+        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
+    <div class="panel-body">
+        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
+    <div class="panel-body">
+        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
+    <div class="panel-body">
+        Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 WebSocket 传输与 TCP 有何区别？</h5></div>
     <div class="panel-body">
         WebSocket 通过 HTTP 封装 TCP 流量，适合伪装成正常网页请求，增加隐蔽性。相比原生 TCP，可更好地绕过封锁和 DPI 检测，但略增加协议开销。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
+    <div class="panel-heading"><h5>Nekoray 节点订阅自动更新如何配置？</h5></div>
     <div class="panel-body">
-        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。    </div>
+        用户可添加订阅 URL，Nekoray 会定期下载并替换旧节点。这样可保证节点列表始终最新，减少手动维护，提高使用效率，同时保证网络访问稳定可靠。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -437,16 +437,16 @@ A：这主要取决于服务商的隐私政策。建议选择承诺无日志政�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/today-loon-node-2026-8-1.htm" title="「8月1日」每天更新20.2M/S，SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Loon免费节点订阅链接">「8月1日」每天更新20.2M/S，SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-30-free-node-subscribe.htm" title="「7月30日」每天更新21.3M/S，Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Loon免费节点订阅链接">「7月30日」每天更新21.3M/S，Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/loon-node-2026-8-7.htm" title="「8月7日」每天更新18M/S，V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Loon免费节点订阅链接">「8月7日」每天更新18M/S，V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-9.htm" title="「8月9日」每天更新20M/S，Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Loon免费节点订阅链接">「8月9日」每天更新20M/S，Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-24-loon-node-github.htm" title="「7月24日」每天更新20.6M/S，Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Loon免费节点订阅链接">「7月24日」每天更新20.6M/S，Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-16-loon-node-github.htm" title="「7月16日」每天更新20.8M/S，Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点/Loon免费节点订阅链接">「7月16日」每天更新20.8M/S，Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-11.htm" title="「8月11日」每天更新19.2M/S，Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Loon免费节点订阅链接">「8月11日」每天更新19.2M/S，Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-7-31.htm" title="「7月31日」每天更新19.2M/S，Trojan节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接">「7月31日」每天更新19.2M/S，Trojan节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-26-node-share.htm" title="「7月26日」每天更新22M/S，Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Loon免费节点订阅链接">「7月26日」每天更新22M/S，Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Loon免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-3.htm" title="「8月3日」每天更新19.7M/S，Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Loon免费节点订阅链接">「8月3日」每天更新19.7M/S，Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-12-node-share.htm" title="「8月12日」每天更新21.6M/S，Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/Loon免费节点订阅链接">「8月12日」每天更新21.6M/S，Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-20-free-node-subscribe.htm" title="「8月20日」每天更新20.4M/S，SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接">「8月20日」每天更新20.4M/S，SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-free-node-subscribe.htm" title="「9月2日」每天更新18M/S，Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Loon免费节点订阅链接">「9月2日」每天更新18M/S，Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-loon-node-share.htm" title="「8月22日」每天更新19.1M/S，Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Trojan节点/Loon免费节点订阅链接">「8月22日」每天更新19.1M/S，Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Trojan节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-subscribe-node.htm" title="「8月10日」每天更新21.5M/S，V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/Loon免费节点订阅链接">「8月10日」每天更新21.5M/S，V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-24-latest-loon-node.htm" title="「8月24日」每天更新20.7M/S，Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Loon免费节点订阅链接">「8月24日」每天更新20.7M/S，Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/linux-loon-github-2026-9-3.htm" title="「9月3日」每天更新19.1M/S，Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点/Loon免费节点订阅链接">「9月3日」每天更新19.1M/S，Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-loon-windows.htm" title="「8月18日」每天更新19.4M/S，Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Loon免费节点订阅链接">「8月18日」每天更新19.4M/S，Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-loon-windows.htm" title="「8月6日」每天更新21M/S，Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接">「8月6日」每天更新21M/S，Clash节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Loon免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-loon-node-2026-8-21.htm" title="「8月21日」每天更新22.6M/S，Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点/Loon免费节点订阅链接">「8月21日」每天更新22.6M/S，Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点/Loon免费节点订阅链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -458,10 +458,10 @@ A：这主要取决于服务商的隐私政策。建议选择承诺无日志政�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
